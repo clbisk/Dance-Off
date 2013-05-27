@@ -26,6 +26,7 @@ public class GamePlayPanel extends JPanel {
 	*/
 	public GamePlayPanel() {
 		//draws three panels inside itself
+		setFocusable(true);
 		setLayout(new BorderLayout());
 		
 		JPanel panel1 = new JPanel();
@@ -36,11 +37,12 @@ public class GamePlayPanel extends JPanel {
 		panel1.add(scorePnl, BorderLayout.NORTH);
 	
 		JPanel dancerPnl = new dancerPanel();
-		panel1.add(dancerPnl, BorderLayout.CENTER);
+		panel1.add(dancerPnl, BorderLayout.EAST);
 		
 		JPanel danceQueuePnl = new DanceQueuePanel();
-		panel1.add(danceQueuePnl, BorderLayout.WEST);
+		panel1.add(danceQueuePnl, BorderLayout.CENTER);
 
+		addKeyListener(new ArrowPressed());
 		playSong();
 	}
 	/**Plays WAV file corresponding to the song selected previously */
@@ -83,5 +85,27 @@ public class GamePlayPanel extends JPanel {
 	/**Creates arrows at intervals determined by the timer */
 	public static void timeArrows() {
 		//Uses arrays with dance queues inside
+	}
+	private class ArrowPressed implements KeyListener {
+		@Override
+		public void keyPressed(KeyEvent e) {
+			System.out.println(e.toString());
+			if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+				System.out.println("right");
+			if (e.getKeyCode() == KeyEvent.VK_LEFT)
+				System.out.println("left");
+			if (e.getKeyCode() == KeyEvent.VK_UP)
+				System.out.println("up");
+			if (e.getKeyCode() == KeyEvent.VK_DOWN)
+				System.out.println("down");
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {
+		}
+
+		@Override
+		public void keyTyped(KeyEvent e) {
+		}
 	}
 }

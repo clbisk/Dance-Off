@@ -93,9 +93,11 @@ public class Danceoff {
 	/** displays panel for game play after selections are complete */
 	public static void gamePlayStart() {
 		// accesses layout from GamePlayPanel class
-		DanceQueuePanel panel = new DanceQueuePanel();
+		GamePlayPanel panel = new GamePlayPanel();
+		//DanceQueuePanel panel = new DanceQueuePanel();
 		frame.setContentPane(panel);
-		panel.requestFocusInWindow();
+		//frame.pack();
 		frame.setVisible(true);
+		panel.requestFocusInWindow();
 	}
 }

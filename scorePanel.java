@@ -15,7 +15,7 @@ public class scorePanel extends JPanel {
 	public scorePanel() {
 	
 	setLayout(new FlowLayout());
-	setSize(300, 150);
+	setSize(300, 300);
 	
 	JLabel score = new JLabel("0");
 	score.setFont(new Font("Serif", Font.BOLD, 100));

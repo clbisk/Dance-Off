@@ -47,8 +47,11 @@ public class DanceQueuePanel extends JPanel {
 		// flow layout
 		// uses buffer to draw arrows based on queues in an array
 		setFocusable(true);
-		addKeyListener(new ArrowPressed());
 		setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK, 3), "DanceQueue"));
+	}
+	
+	public void paintComponent(Graphics g) {
+		g.drawRect(boxXMin, boxYMin, (boxXMax-boxXMin), (boxYMax-boxYMin));
 	}
 
 	// methods
@@ -73,26 +76,4 @@ public class DanceQueuePanel extends JPanel {
 		}
 	}
 
-	private class ArrowPressed implements KeyListener {
-		@Override
-		public void keyPressed(KeyEvent e) {
-			System.out.println(e.toString());
-			if (e.getKeyCode() == KeyEvent.VK_RIGHT)
-				System.out.println("right");
-			if (e.getKeyCode() == KeyEvent.VK_LEFT)
-				System.out.println("left");
-			if (e.getKeyCode() == KeyEvent.VK_UP)
-				System.out.println("up");
-			if (e.getKeyCode() == KeyEvent.VK_DOWN)
-				System.out.println("down");
-		}
-
-		@Override
-		public void keyReleased(KeyEvent e) {
-		}
-
-		@Override
-		public void keyTyped(KeyEvent e) {
-		}
 	}
-}
