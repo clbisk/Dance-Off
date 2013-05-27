@@ -28,37 +28,9 @@ public class DanceQueuePanel extends JPanel {
 	public DanceQueuePanel() {
 		//flow layout
 		//uses buffer to draw arrows based on queues in an array
+		setFocusable(true);
 		addKeyListener(new ArrowPressed());
 		setBorder(BorderFactory.createLineBorder(Color.black));
-		
-		//  InputMap im = getInputMap();  
-//         ActionMap am = getActionMap();  
-  
-        // Action action = new SimpleAction("Left");  
-//         Object key = action.getValue(Action.NAME);  
-//         KeyStroke keyStroke = KeyStroke.getKeyStroke("LEFT");  
-//         im.put(keyStroke, key);  
-//         am.put(key, action);  
-//   
-//         action = new SimpleAction("Right");  
-//         key = action.getValue(Action.NAME);  
-//         keyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0);  
-//         im.put(keyStroke, key);  
-//         am.put(key, action);
-		  
-		  Action upAction = new Action() {
-		  	public void actionPerformed(ActionEvent event) {
-				System.out.println(event.toString());
-			}
-			public void addPropertyChangeListener(PropertyChangeListener listener) {
-			}
-			public void removePropertyChangeListener(PropertyChangeListener listener) {
-			}
-		  };
-		  
-		  getInputMap().put(KeyStroke.getKeyStroke("UP_ARROW"), "doMyUpArrowness");
-		  getActionMap().put("doMyUpArrowness", upAction);
-
 	}
 	
 	//methods
@@ -80,9 +52,9 @@ public class DanceQueuePanel extends JPanel {
 			//repaint();
 		}
 	}
-	public boolean isFocusTraversable() {
-		return true;
-   }
+// 	public boolean isFocusTraversable() {
+// 		return true;
+//    }
 	/**listener for right arrow key*/
 	//private class rightArrowPressed extends KeyAdapter {
 		/**handles scoring for right arrow dance queues*/
@@ -102,16 +74,17 @@ public class DanceQueuePanel extends JPanel {
 			//}			
 		//}
 	//}
-	private class ArrowPressed extends KeyAdapter{
+	private class ArrowPressed implements KeyListener{
+		@Override
        public void keyPressed(KeyEvent e){
          if(e.getKeyCode()== KeyEvent.VK_RIGHT)
-            System.out.print("right"); 
+            System.out.println("right"); 
          if(e.getKeyCode()== KeyEvent.VK_LEFT)
-            System.out.print("left");
+            System.out.println("left");
          if(e.getKeyCode()== KeyEvent.VK_UP)
-            System.out.print("up");
+            System.out.println("up");
          if(e.getKeyCode()== KeyEvent.VK_DOWN)
-            System.out.print("down");
+            System.out.println("down");
       }
        public void keyReleased(KeyEvent e){
       }
