@@ -47,7 +47,7 @@ public class DanceQueuePanel extends JPanel {
 		// flow layout
 		// uses buffer to draw arrows based on queues in an array
 		setFocusable(true);
-		setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK, 3), "DanceQueue"));
+		setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK, 3), "DanceQueuePanel"));
 	}
 	
 	public void paintComponent(Graphics g) {

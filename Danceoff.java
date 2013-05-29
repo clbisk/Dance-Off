@@ -1,11 +1,3 @@
-//idek if this will work
-var firepadDiv = document.getElementById('firepad');
-var firepadRef = new Firebase('<firebase url...>');
-var codeMirror = CodeMirror(firepadDiv, { lineWrapping: true });
-var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror,
-    { richTextShortcuts: true, richTextToolbar: true });
-
-
 //Pd 5 AccCS RoseS
 //Cecilia Bisk, Syona Satwah, Joanna Gerr
 
