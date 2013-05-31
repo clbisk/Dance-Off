@@ -91,15 +91,22 @@ public class GamePlayPanel extends JPanel {
 		@Override
 		public void keyPressed(KeyEvent e) {
 			System.out.println(e.toString());
-			if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 				System.out.println("right");
 				dancerPanel.turnRight();
-			if (e.getKeyCode() == KeyEvent.VK_LEFT)
+			}
+			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 				System.out.println("left");
-			if (e.getKeyCode() == KeyEvent.VK_UP)
+				dancerPanel.turnLeft();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_UP) {
 				System.out.println("up");
-			if (e.getKeyCode() == KeyEvent.VK_DOWN)
+				dancerPanel.turnUp();
+			}
+			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 				System.out.println("down");
+				dancerPanel.turnDown();
+			}
 		}
 
 		@Override
