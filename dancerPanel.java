@@ -22,7 +22,24 @@ public class dancerPanel extends JPanel {
 		//setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK, 3), "DancerPanel"));
 	}
 	public static void turnRight() {
-		position = new ImageIcon("rightPos.png");
+		position = new ImageIcon(("rightPos.png"));
 		dancer.setIcon(position);
+		dancer.revalidate();
 	}
+	public static void turnLeft() {
+		position = new ImageIcon(("leftPos.png"));
+		dancer.setIcon(position);
+		dancer.revalidate();
+	}
+	public static void turnUp() {
+		//position = new ImageIcon();
+		dancer.setIcon(new ImageIcon("frontPos.png"));
+		dancer.revalidate();
+	}
+	public static void turnDown() {
+		//position = new ImageIcon();
+		dancer.setIcon(new ImageIcon("backPos.png"));
+		dancer.revalidate();
+	}
+
 }
