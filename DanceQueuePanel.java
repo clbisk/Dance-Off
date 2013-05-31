@@ -25,22 +25,22 @@ public class DanceQueuePanel extends JPanel {
 	 * variable to store the lowest x-coordinate of the box where keys are
 	 * considered "on time"
 	 */
-	private int boxXMin = 50;
+	private int boxXMin = 0;
 	/**
 	 * variable to store the highest x-coordinate of the box where keys are
 	 * considered "on time"
 	 */
-	private int boxXMax = 170;
+	private int boxXMax = 600;
 	/**
 	 * variable to store the lowest y-coordinate of the box where keys are
 	 * considered "on time"
 	 */
-	private int boxYMin = 0;
+	private int boxYMin = 50;
 	/**
 	 * variable to store the highest y-coordinate of the box where keys are
 	 * considered "on time"
 	 */
-	private int boxYMax = 600;
+	private int boxYMax = 170;
 
 	/** constructor */
 	public DanceQueuePanel() {
@@ -51,7 +51,8 @@ public class DanceQueuePanel extends JPanel {
 	}
 	
 	public void paintComponent(Graphics g) {
-		g.drawRect(boxXMin, boxYMin, (boxXMax-boxXMin), (boxYMax-boxYMin));
+		g.setColor(Color.LIGHT_GRAY);
+		g.fillRect(boxXMin, boxYMin, (boxXMax-boxXMin), (boxYMax-boxYMin));
 	}
 
 	// methods
@@ -75,5 +76,4 @@ public class DanceQueuePanel extends JPanel {
 			// repaint();
 		}
 	}
-
-	}
+}
