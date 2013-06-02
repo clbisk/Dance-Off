@@ -83,10 +83,6 @@ public class GamePlayPanel extends JPanel {
    		}
 		}
 	} 
-	/**Creates arrows at intervals determined by the timer */
-	public static void timeArrows() {
-		//Uses arrays with dance queues inside
-	}
 	private class ArrowPressed implements KeyListener {
 		@Override
 		public void keyPressed(KeyEvent e) {

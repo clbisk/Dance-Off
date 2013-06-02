@@ -45,12 +45,12 @@ public class MakeYerOwn extends JPanel {
 	 *	variable	to	store	the lowest y-coordinate	of	the box where keys are
 	 *	considered "on	time"
 	 */
-	private static	int boxYMin	= 170;
+	private static	int boxYMin	= 240;
 	/**
 	 *	variable	to	store	the highest	y-coordinate of the box	where	keys are
 	 *	considered "on	time"
 	 */
-	private static	int boxYMax	= 290;
+	private static	int boxYMax	= 360;
 
 	/** constructor */
 	public MakeYerOwn() {
@@ -127,7 +127,7 @@ public class MakeYerOwn extends JPanel {
 				}
 			}
 			else {
-				System.out.println("This level has not	yet been	created!");
+				//System.out.println("This level has not	yet been	created!");
 			}
 			//increments time	count
 			time += 5;

@@ -33,9 +33,6 @@ public class MakeYourOwn extends JPanel {
 		panel1.setLayout(new BorderLayout());
 		add(panel1, BorderLayout.CENTER);
 	
-		JPanel scorePnl = new scorePanel();
-		panel1.add(scorePnl, BorderLayout.NORTH);
-	
 		JPanel dancerPnl = new dancerPanel();
 		panel1.add(dancerPnl, BorderLayout.EAST);
 		
@@ -83,10 +80,6 @@ public class MakeYourOwn extends JPanel {
    		}
 		}
 	} 
-	/**Creates arrows at intervals determined by the timer */
-	public static void timeArrows() {
-		//Uses arrays with dance queues inside
-	}
 	private class ArrowPressed implements KeyListener {
 		@Override
 		public void keyPressed(KeyEvent e) {
@@ -94,22 +87,22 @@ public class MakeYourOwn extends JPanel {
 			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 				//System.out.println("right");
 				dancerPanel.turnRight();
-				DanceQueuePanel.right();
+				MakeYerOwn.right();
 			}
 			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 				//System.out.println("left");
 				dancerPanel.turnLeft();
-				DanceQueuePanel.left();
+				MakeYerOwn.left();
 			}
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
 				//System.out.println("up");
 				dancerPanel.turnUp();
-				DanceQueuePanel.up();
+				MakeYerOwn.up();
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 				//System.out.println("down");
 				dancerPanel.turnDown();
-				DanceQueuePanel.down();
+				MakeYerOwn.down();
 			}
 		}
 

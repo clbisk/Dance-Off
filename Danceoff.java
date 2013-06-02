@@ -64,8 +64,10 @@ public class Danceoff {
 	
 	/** displays song creater panel */
 	public static void newSong() {
-		frame.setContentPane(new MakeYourOwn());
+		MakeYourOwn makeyrown = new MakeYourOwn();
+		frame.setContentPane(makeyrown);
 		frame.setVisible(true);
+		makeyrown.requestFocusInWindow();
 	}
 
 	/** setter for private variable song */
