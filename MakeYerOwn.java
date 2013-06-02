@@ -45,12 +45,12 @@ public class MakeYerOwn extends JPanel {
 	 *	variable	to	store	the lowest y-coordinate	of	the box where keys are
 	 *	considered "on	time"
 	 */
-	private static	int boxYMin	= 240;
+	private static	int boxYMin	= 480;
 	/**
 	 *	variable	to	store	the highest	y-coordinate of the box	where	keys are
 	 *	considered "on	time"
 	 */
-	private static	int boxYMax	= 360;
+	private static	int boxYMax	= 600;
 
 	/** constructor */
 	public MakeYerOwn() {
@@ -106,26 +106,27 @@ public class MakeYerOwn extends JPanel {
 	private class Listener implements ActionListener {
 		/** redraws	panel	*/
 		public void	actionPerformed(ActionEvent e) {
-			//clears	buffer
-			myBuffer.setColor(new Color(237,	237, 237));
-			myBuffer.fillRect(0,0,600,600);
-			//draws box
-			myBuffer.setColor(Color.LIGHT_GRAY);
-			myBuffer.fillRect(boxXMin,	boxYMin,	(boxXMax-boxXMin), (boxYMax-boxYMin));
-			//draw arrows
-			if	(arrows != null) {
-				for (int	i = 0; i	< arrows.size(); i++) {
-					drawArrow(myBuffer, time, MakeYerOwn.arrows.get(i));
+			if (time < 51000) {
+				//clears	buffer
+				myBuffer.setColor(new Color(237,	237, 237));
+				myBuffer.fillRect(0,0,600,600);
+				//draws box
+				myBuffer.setColor(Color.LIGHT_GRAY);
+				myBuffer.fillRect(boxXMin,	boxYMin,	(boxXMax-boxXMin), (boxYMax-boxYMin));
+				//draw arrows
+				if	(arrows != null) {
+					for (int	i = 0; i	< arrows.size(); i++) {
+						drawArrow(myBuffer, time, MakeYerOwn.arrows.get(i));
+					}
 				}
+				//increments time	count
+				time += 5;
+				//repaints
+				repaint();
 			}
 			else {
-				//System.out.println("This level has not	yet been	created!");
+				Danceoff.displayTitleScreen();
 			}
-			//increments time	count
-			time += 5;
-			//repaints
-			repaint();
-			//scheduleNextFrame();
 		}
 		public void	drawArrow(Graphics myBuffer, int	time,	Arrow	arrow) {
 			int x;
