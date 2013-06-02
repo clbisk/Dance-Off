@@ -49,7 +49,7 @@ public class MakeYourOwn extends JPanel {
 	/**Plays WAV file corresponding to the song selected previously */
 	public static void playSong() {
 		int songChoice = Danceoff.getSong();
-		if (songChoice == -1) { //Baa Baa Black Sheep
+		if (songChoice == -1) { //Song C
 			try{
 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
@@ -60,7 +60,7 @@ public class MakeYourOwn extends JPanel {
 				ex.printStackTrace();
    		}
 		}
-		else if (songChoice == 0) { //Mary Had a Little Lamb
+		else if (songChoice == 0) { //Song B
 			try{
 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
@@ -71,7 +71,7 @@ public class MakeYourOwn extends JPanel {
 				ex.printStackTrace();
    		}
 		}
-		else { //Twinkle Twinkle Little Star
+		else { //Song A
 			try{
 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
