@@ -28,7 +28,7 @@ public class Danceoff {
 	// methods
 	/** main method to be run for Danceoff program */
 	public static void main(String[] args) throws Exception {
-		frame.setSize(600, 600);
+		frame.setSize(800, 600);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		displayTitleScreen();
@@ -99,5 +99,8 @@ public class Danceoff {
 		//frame.pack();
 		frame.setVisible(true);
 		panel.requestFocusInWindow();
+	}
+	public static void songEnd() {
+		displayHighScores();
 	}
 }

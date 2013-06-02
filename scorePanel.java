@@ -9,20 +9,22 @@
 /** Description of class scorePanel */
    public class scorePanel extends JPanel {
    /** scorePanel has one label: score */
-      private JLabel score;
+      public static JLabel score;
       public static int currentScore;
    /** Flow layout, with one JLabel displaying current score. JLabel is updated whenever more points are scored.*/ 
       public scorePanel() {
       
          setLayout(new FlowLayout());
          setSize(300, 300);
-      
-         JLabel score =	new JLabel("0");
-         score.setFont(new	Font("Serif", Font.BOLD, 100));
+      	
+			currentScore = 0;
+         score = new JLabel();
+         score.setFont(new	Font("Serif", Font.BOLD, 75));
          score.setForeground(Color.red);
+			score.setText("" + currentScore);
          add(score);
       
-         setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK,	3), "ScorePanel"));
+         //setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK,	3), "ScorePanel"));
       }
    
    /** Returns current score*/
@@ -32,5 +34,6 @@
    /** Sets score to newScore */
       public static void setScore(int newScore) {
          currentScore = newScore;
+			score.setText("" + newScore);
       }
    }

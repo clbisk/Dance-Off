@@ -44,7 +44,7 @@ public class GamePlayPanel extends JPanel {
 
 		addKeyListener(new ArrowPressed());
 		playSong();
-		setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK, 3), "GamePlayPanel"));
+		//setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK, 3), "GamePlayPanel"));
 	}
 	/**Plays WAV file corresponding to the song selected previously */
 	public static void playSong() {
@@ -92,20 +92,24 @@ public class GamePlayPanel extends JPanel {
 		public void keyPressed(KeyEvent e) {
 			System.out.println(e.toString());
 			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-				System.out.println("right");
+				//System.out.println("right");
 				dancerPanel.turnRight();
+				DanceQueuePanel.right();
 			}
 			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-				System.out.println("left");
+				//System.out.println("left");
 				dancerPanel.turnLeft();
+				DanceQueuePanel.left();
 			}
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
-				System.out.println("up");
+				//System.out.println("up");
 				dancerPanel.turnUp();
+				DanceQueuePanel.up();
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-				System.out.println("down");
+				//System.out.println("down");
 				dancerPanel.turnDown();
+				DanceQueuePanel.down();
 			}
 		}
 
