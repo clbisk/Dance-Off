@@ -43,18 +43,18 @@ public class HighScoreScreen extends JPanel {
 		panel3.setLayout(new BoxLayout(panel3, BoxLayout.Y_AXIS));
 		panel2.add(panel3);
 		
-		highScoreSongAEasy = new JLabel("There is no top highscore for \"Twinkle Twinkle Little Star\" on easy mode.");
+		highScoreSongAEasy = new JLabel("There is no top highscore for \"Bad Girl\" on easy mode.");
 		panel3.add(highScoreSongAEasy);
-		highScoreSongBEasy = new JLabel("There is no top highscore for \"Mary Had a Little Lamb\" on easy mode.");
+		highScoreSongBEasy = new JLabel("There is no top highscore for \"Wordkill\" on easy mode.");
 		panel3.add(highScoreSongBEasy);
-		highScoreSongCEasy = new JLabel("There is no top highscore for \"Baa Baa Black Sheep\" on easy mode.");
+		highScoreSongCEasy = new JLabel("There is no top highscore for \"Stop It\" on easy mode.");
 		panel3.add(highScoreSongCEasy);
 		
-		highScoreSongAHard = new JLabel("There is no top highscore for \"Twinkle Twinkle Little Star\" on hard mode.");
+		highScoreSongAHard = new JLabel("There is no top highscore for \"Bad Girl\" on hard mode.");
 		panel3.add(highScoreSongAHard);
-		highScoreSongBHard = new JLabel("There is no top highscore for \"Mary Had A Little Lamb\" on hard mode.");
+		highScoreSongBHard = new JLabel("There is no top highscore for \"Wordkill\" on hard mode.");
 		panel3.add(highScoreSongBHard);
-		highScoreSongCHard = new JLabel("There is no top highscore for \"Baa Baa Black Sheep\" on hard mode.");
+		highScoreSongCHard = new JLabel("There is no top highscore for \"Stop It\" on hard mode.");
 		panel3.add(highScoreSongCHard);
 		
 	}
