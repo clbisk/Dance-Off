@@ -24,7 +24,8 @@ public class InstructionScreen extends JPanel {
 		panel2.setLayout(new FlowLayout());
 		add(panel2, BorderLayout.CENTER);
 		
-		instructions = new JLabel("these are the instructions");
+		ImageIcon text = new ImageIcon(this.getClass().getResource("instructionsss.png"));
+		instructions = new JLabel(text);
 		panel2.add(instructions);
 	}
 	//one listener
