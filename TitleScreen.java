@@ -20,6 +20,10 @@ public class TitleScreen extends JPanel {
 		panel2.setLayout(new BorderLayout());
 		panel.add(panel2, BorderLayout.CENTER);
 		
+		JPanel panel3 = new JPanel();
+		panel3.setLayout(new BorderLayout());
+		panel2.add(panel3, BorderLayout.CENTER);
+		
 		//four buttons: display instructions, display high scores, start game, and exit
 		JButton button1 = new JButton("Instructions");
       button1.addActionListener(new InstructionsListener());
@@ -32,16 +36,16 @@ public class TitleScreen extends JPanel {
 		panel.add(button4, BorderLayout.SOUTH);
 		JButton button3 = new JButton("Start Game");
 		button3.addActionListener(new StartGameListener());
-		panel2.add(button3, BorderLayout.SOUTH);
+		panel3.add(button3, BorderLayout.SOUTH);
 		
 		JButton newSong = new JButton("Create Your Own Dance");
       newSong.addActionListener(new NewSongListener());
-		panel.add(newSong, BorderLayout.CENTER);
+		panel2.add(newSong, BorderLayout.SOUTH);
 		
 		//JPanel with ImageIcon displaying title
 		ImageIcon image = new ImageIcon(this.getClass().getResource("danceoff title1 cleaned.png"));
 		title = new JLabel(image);
-		panel2.add(title, BorderLayout.CENTER);
+		panel3.add(title, BorderLayout.CENTER);
 	}
 	//four listeners
 	/**listens for instructions button clicked*/
