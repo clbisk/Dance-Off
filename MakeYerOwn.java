@@ -20,7 +20,7 @@ public class MakeYerOwn extends JPanel {
 	 *	an	array	of	Arrow	objects that will	serve	to	store	the coordinates of
 	 *	future arrows drawn on screen
 	 */
-	private static	Arrow[] arrows;
+	private static	ArrayList<Arrow> arrows;
 	private BufferedImage myImage;
 	private Graphics myBuffer;
 	private Timer timer;
@@ -29,7 +29,7 @@ public class MakeYerOwn extends JPanel {
 	private BufferedImage upArrowImg;
 	private BufferedImage downArrowImg;
 	/**scale	factor to determine how	long the	arrow	will take to get up the	screen*/
-	private static	double scaling	= 0.6;
+	private static	double scaling	= 0.5;
 	public static int	time;
 	/**
 	 *	variable	to	store	the lowest x-coordinate	of	the box where keys are
@@ -64,10 +64,7 @@ public class MakeYerOwn extends JPanel {
 		timer	= new	Timer(5,	new Listener());
 		timer.start();
 		setFocusable(true);
-		//picks instructions	based	on	song & level
-		if	(Danceoff.getSong() == -1 && Danceoff.getDifficulty()	==	0)	{
-			arrows =	new Arrow[]	{new UpArrow(1000), new	DownArrow(1000), new	LeftArrow(3000)};
-		}
+		arrows = new ArrayList();
 		//setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK, 3),	"MakeYerOwn"));
 		//load images for arrows
 		rightArrowImg = null;
@@ -95,19 +92,14 @@ public class MakeYerOwn extends JPanel {
 		Logger.getLogger(getClass().getName()).log(Level.WARNING, msg, t);
 	}
 	
-	/** getter for	private array arrows	*/
-	private static	Arrow[] getArrows() {
+	/** getter for	private arraylist arrows */
+	private static	ArrayList<Arrow> getArrows() {
 		if	(arrows != null) {
 			return arrows;
 		}
 		else {
 			return null;
 		}
-	}
-
-	/** getter for	element of private array arrows */
-	private static	Arrow	getArrow(int arrowPos) {
-		return arrows[arrowPos];
 	}
 
 	/** listener to redraw panel according	to	timer	*/
@@ -122,8 +114,8 @@ public class MakeYerOwn extends JPanel {
 			myBuffer.fillRect(boxXMin,	boxYMin,	(boxXMax-boxXMin), (boxYMax-boxYMin));
 			//draw arrows
 			if	(arrows != null) {
-				for (int	i = 0; i	< arrows.length; i++) {
-					drawArrow(myBuffer, time, MakeYerOwn.arrows[i]);
+				for (int	i = 0; i	< arrows.size(); i++) {
+					drawArrow(myBuffer, time, MakeYerOwn.arrows.get(i));
 				}
 			}
 			else {
@@ -165,50 +157,18 @@ public class MakeYerOwn extends JPanel {
 	
 	/**method to handle right arrow key	presses*/
 	public static void right()	{
-		for (int	i = 0; i	< arrows.length; i++) {
-			if	(arrows[i] instanceof RightArrow) {
-				double currentPos	= (int)((arrows[i].startTime - time) *	scaling);
-				if	(currentPos+100 >	boxYMin && currentPos <	boxYMax)	{
-					scorePanel.setScore(scorePanel.getScore()+5);
-					arrows[i].startTime = 0;
-				}
-			}
-		}
+		arrows.add(new RightArrow(time+1000));
 	}
 	/**method to handle left arrow key presses*/
 	public static void left() {
-		for (int	i = 0; i	< arrows.length; i++) {
-			if	(arrows[i] instanceof LeftArrow)	{
-				double currentPos	= (int)((arrows[i].startTime - time) *	scaling);
-				if	(currentPos+100 >	boxYMin && currentPos <	boxYMax)	{
-					scorePanel.setScore(scorePanel.getScore()+5);
-					arrows[i].startTime = 0;
-				}
-			}
-		}
+		arrows.add(new LeftArrow(time+1000));
 	}
 	/**method to handle down arrow key presses*/
 	public static void up()	{
-		for (int	i = 0; i	< arrows.length; i++) {
-			if	(arrows[i] instanceof UpArrow) {
-				double currentPos	= (int)((arrows[i].startTime - time) *	scaling);
-				if	(currentPos+100 >	boxYMin && currentPos <	boxYMax)	{
-					scorePanel.setScore(scorePanel.getScore()+5);
-					arrows[i].startTime = 0;
-				}
-			}
-		}
+		arrows.add(new UpArrow(time+1000));
 	}
 	/**method to handle up arrow key	presses*/
 	public static void down() {
-		for (int	i = 0; i	< arrows.length; i++) {
-			if	(arrows[i] instanceof DownArrow)	{
-				double currentPos	= (int)((arrows[i].startTime - time) *	scaling);
-				if	(currentPos+100 >	boxYMin && currentPos <	boxYMax)	{
-					scorePanel.setScore(scorePanel.getScore()+5);
-					arrows[i].startTime = 0;
-				}
-			}
-		}
+		arrows.add(new DownArrow(time+1000));
 	}
 }
