@@ -86,7 +86,7 @@ public class GamePlayPanel extends JPanel {
 	private class ArrowPressed implements KeyListener {
 		@Override
 		public void keyPressed(KeyEvent e) {
-			System.out.println(e.toString());
+			//System.out.println(e.toString());
 			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 				//System.out.println("right");
 				dancerPanel.turnRight();
