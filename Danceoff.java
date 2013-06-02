@@ -61,6 +61,12 @@ public class Danceoff {
 		frame.setContentPane(new SongSelectionScreen());
 		frame.setVisible(true);
 	}
+	
+	/** displays song creater panel */
+	public static void newSong() {
+		frame.setContentPane(new MakeYourOwn());
+		frame.setVisible(true);
+	}
 
 	/** setter for private variable song */
 	public static void setSong(int tune) {

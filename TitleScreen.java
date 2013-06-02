@@ -34,6 +34,10 @@ public class TitleScreen extends JPanel {
 		button3.addActionListener(new StartGameListener());
 		panel2.add(button3, BorderLayout.SOUTH);
 		
+		JButton newSong = new JButton("Create Your Own Dance");
+      newSong.addActionListener(new NewSongListener());
+		panel.add(newSong, BorderLayout.CENTER);
+		
 		//JPanel with ImageIcon displaying title
 		ImageIcon image = new ImageIcon(this.getClass().getResource("danceoff title1 cleaned.png"));
 		title = new JLabel(image);
@@ -66,6 +70,13 @@ public class TitleScreen extends JPanel {
 		/**exits game*/
 		public void actionPerformed(ActionEvent d) {
 			System.exit(0);
+		}
+	}
+	/**listens for new song button clicked*/
+	private class NewSongListener implements ActionListener {
+		/**exits game*/
+		public void actionPerformed(ActionEvent d) {
+			Danceoff.newSong();
 		}
 	}
 }

@@ -66,7 +66,7 @@ public class DanceQueuePanel extends JPanel {
 		setFocusable(true);
 		//picks instructions	based	on	song & level
 		if	(Danceoff.getSong() == -1 && Danceoff.getDifficulty()	==	0)	{
-			arrows =	new Arrow[]	{new UpArrow(1000), new	DownArrow(2000), new	LeftArrow(3000)};
+			arrows =	new Arrow[]	{new UpArrow(1000), new	DownArrow(1000), new	LeftArrow(3000)};
 		}
 		//setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK, 3),	"DanceQueuePanel"));
 		//load images for arrows
