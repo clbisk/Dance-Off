@@ -59,6 +59,7 @@ public class HighScoreScreen extends JPanel {
 		
 	}
 	/** Back Listener for High Scores*/
+	//
 	private class BackListener implements ActionListener {
 		/** Calls method to display title screen*/
 		public void actionPerformed(ActionEvent a) {
