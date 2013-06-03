@@ -45,13 +45,13 @@ public class SongSelectionScreen extends JPanel {
 		panel4A.setLayout(new FlowLayout());
 		panel.add(panel4A, BorderLayout.SOUTH);
 	
-		JButton button1= new JButton("Song C: Stop It");
+		JButton button1= new JButton("Baa Baa Black Sheep");
 		button1.addActionListener(new SongAListener());
 		button1.setPreferredSize(new Dimension(200, 30));
-		JButton button2= new JButton("Song B: Wordkill");
+		JButton button2= new JButton("Mary Had a Little Lamb");
 		button2.addActionListener(new SongBListener());
 		button2.setPreferredSize(new Dimension(200, 30));
-		JButton button3= new JButton("Song A: Bad Girl");
+		JButton button3= new JButton("Twinkle Twinkle Little Star");
 		button3.addActionListener(new SongCListener());
 		button3.setPreferredSize(new Dimension(200, 30));
 		JButton button4= new JButton("Go Back");
