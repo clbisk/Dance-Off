@@ -46,9 +46,42 @@ public class MakeYourOwn extends JPanel {
 	/**Plays WAV file corresponding to the song selected previously */
 	public static void playSong() {
 		int songChoice = Danceoff.getSong();
-		if (songChoice == -1) { //Song C
+		// if (songChoice == -1) { //Song C
+// 			try{
+// 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
+// 				Clip clip = AudioSystem.getClip();
+// 				clip.open(audioInputStream);
+// 				clip.start();
+//    		}catch(Exception ex){
+// 				System.out.println("Error with playing sound.");
+// 				ex.printStackTrace();
+//    		}
+// 		}
+// 		else if (songChoice == 0) { //Song B
+// 			try{
+// 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
+// 				Clip clip = AudioSystem.getClip();
+// 				clip.open(audioInputStream);
+// 				clip.start();
+//    		}catch(Exception ex){
+// 				System.out.println("Error with playing sound.");
+// 				ex.printStackTrace();
+//    		}
+// 		}
+// 		else { //Song A
+// 			try{
+// 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
+// 				Clip clip = AudioSystem.getClip();
+// 				clip.open(audioInputStream);
+// 				clip.start();
+//    		}catch(Exception ex){
+// 				System.out.println("Error with playing sound.");
+// 				ex.printStackTrace();
+//    		}
+// 		}
 			try{
-				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
+				//AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("Love Love Love - Epik High (INSTRUMENTAL).wav").getAbsoluteFile());
+				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("B.A.P. - Stop It Instrumental.wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
 				clip.open(audioInputStream);
 				clip.start();
@@ -56,29 +89,6 @@ public class MakeYourOwn extends JPanel {
 				System.out.println("Error with playing sound.");
 				ex.printStackTrace();
    		}
-		}
-		else if (songChoice == 0) { //Song B
-			try{
-				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
-				Clip clip = AudioSystem.getClip();
-				clip.open(audioInputStream);
-				clip.start();
-   		}catch(Exception ex){
-				System.out.println("Error with playing sound.");
-				ex.printStackTrace();
-   		}
-		}
-		else { //Song A
-			try{
-				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
-				Clip clip = AudioSystem.getClip();
-				clip.open(audioInputStream);
-				clip.start();
-   		}catch(Exception ex){
-				System.out.println("Error with playing sound.");
-				ex.printStackTrace();
-   		}
-		}
 	} 
 	private class ArrowPressed implements KeyListener {
 		@Override
@@ -88,25 +98,25 @@ public class MakeYourOwn extends JPanel {
 				//System.out.println("right");
 				dancerPanel.turnRight();
 				MakeYerOwn.right();
-				System.out.print("new RightArrow("+MakeYerOwn.time+"), ");
+				System.out.print("new RightArrow("+(MakeYerOwn.time)+"), ");
 			}
 			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 				//System.out.println("left");
 				dancerPanel.turnLeft();
 				MakeYerOwn.left();
-				System.out.print("new LeftArrow("+MakeYerOwn.time+"), ");
+				System.out.print("new LeftArrow("+(MakeYerOwn.time)+"), ");
 			}
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
 				//System.out.println("up");
 				dancerPanel.turnUp();
 				MakeYerOwn.up();
-				System.out.print("new UpArrow("+MakeYerOwn.time+"), ");
+				System.out.print("new UpArrow("+(MakeYerOwn.time)+"), ");
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 				//System.out.println("down");
 				dancerPanel.turnDown();
 				MakeYerOwn.down();
-				System.out.print("new DownArrow("+MakeYerOwn.time+"), ");
+				System.out.print("new DownArrow("+(MakeYerOwn.time)+"), ");
 			}
 		}
 

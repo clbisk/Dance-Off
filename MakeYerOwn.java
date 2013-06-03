@@ -28,6 +28,7 @@ public class MakeYerOwn	extends JPanel	{
 	private BufferedImage leftArrowImg;
 	private BufferedImage upArrowImg;
 	private BufferedImage downArrowImg;
+	private static long songStart;
 	/**scale	factor to determine how	long the	arrow	will take to get up the	screen*/
 	private static	double scaling	= 0.6;
 	public static int	time;
@@ -54,13 +55,13 @@ public class MakeYerOwn	extends JPanel	{
 
 	/** constructor */
 	public MakeYerOwn() {
+		long songTime = getSongTime();
 		//	flow layout
 		setLayout(new FlowLayout());
 		//	uses buffer	to	draw arrows	based	on	queues in an array
 		myImage =  new	BufferedImage(600, 600,	BufferedImage.TYPE_INT_RGB);
 		myBuffer	= myImage.getGraphics();
 		//uses timer to queue buffer changes
-		time = 0;
 		timer	= new	Timer(5,	new Listener());
 		timer.start();
 		setFocusable(true);
@@ -80,6 +81,7 @@ public class MakeYerOwn	extends JPanel	{
 			warn("Oh no!", e);
 			System.exit(2);
 		}
+		songStart = System.currentTimeMillis();
 	}
 		
 	public void	paintComponent(Graphics	g)	{
@@ -101,12 +103,17 @@ public class MakeYerOwn	extends JPanel	{
 			return null;
 		}
 	}
+	
+	private static long getSongTime() {
+		return System.currentTimeMillis()-songStart;
+	}
 
 	/** listener to redraw panel according	to	timer	*/
 	private class Listener implements ActionListener {
 		/** redraws	panel	*/
 		public void	actionPerformed(ActionEvent e) {
-			if	(time	< 5000)	{
+			//if	(time	< 50000)	{
+			if (getSongTime() < 65000) {
 				//clears	buffer
 				myBuffer.setColor(new Color(237,	237, 237));
 				myBuffer.fillRect(0,0,600,600);
@@ -116,11 +123,9 @@ public class MakeYerOwn	extends JPanel	{
 				//draw arrows
 				if	(arrows != null) {
 					for (int	i = 0; i	< arrows.size(); i++) {
-						drawArrow(myBuffer, time, MakeYerOwn.arrows.get(i));
+						drawArrow(myBuffer, getSongTime(), MakeYerOwn.arrows.get(i));
 					}
 				}
-				//increments time	count
-				time += 5;
 				//repaints
 				repaint();
 			}
@@ -138,9 +143,9 @@ public class MakeYerOwn	extends JPanel	{
 				Danceoff.displayTitleScreen();
 			}
 		}
-		public void	drawArrow(Graphics myBuffer, int	time,	Arrow	arrow) {
+		public void	drawArrow(Graphics myBuffer, long time,	Arrow	arrow) {
 			int x;
-			int y	= (int)((arrow.startTime	- time)*scaling);
+			int y	= (int)((arrow.startTime	- time) * scaling);
 			if	(arrow instanceof	LeftArrow) {
 				x = 0;
 				myBuffer.drawImage(leftArrowImg,	x,	y,	null);
@@ -155,7 +160,7 @@ public class MakeYerOwn	extends JPanel	{
 			}
 			else {
 				x = 450;
-				myBuffer.drawImage(rightArrowImg,	x,	y,	null);
+				myBuffer.drawImage(rightArrowImg, x,	y,	null);
 			}
 			
 			//myBuffer.setColor(Color.black);
@@ -168,19 +173,19 @@ public class MakeYerOwn	extends JPanel	{
 	
 	/**method to handle right arrow key	presses*/
 	public static void right()	{
-		arrows.add(new	RightArrow(time+1000));
+		arrows.add(new	RightArrow((int)(getSongTime()+1000)));
 	}
 	/**method to handle left arrow key presses*/
 	public static void left() {
-		arrows.add(new	LeftArrow(time+1000));
+		arrows.add(new	LeftArrow((int)(getSongTime()+1000)));
 	}
 	/**method to handle down arrow key presses*/
 	public static void up()	{
-		arrows.add(new	UpArrow(time+1000));
+		arrows.add(new	UpArrow((int)(getSongTime()+1000)));
 	}
 	/**method to handle up arrow key	presses*/
 	public static void down() {
-		arrows.add(new	DownArrow(time+1000));
+		arrows.add(new	DownArrow((int)(getSongTime()+1000)));
 	}
 
 }

@@ -44,17 +44,23 @@ public class HighScoreScreen extends JPanel {
 		panel2.add(panel3);
 		
 		highScoreSongAEasy = new JLabel("There is no top highscore for \"Bad Girl\" on easy mode.");
+		//reads songAEasy.ser for hs
 		panel3.add(highScoreSongAEasy);
 		highScoreSongBEasy = new JLabel("There is no top highscore for \"Wordkill\" on easy mode.");
+		//reads songBEasy.ser for hs
 		panel3.add(highScoreSongBEasy);
 		highScoreSongCEasy = new JLabel("There is no top highscore for \"Stop It\" on easy mode.");
+		//reads songCEasy.ser for hs
 		panel3.add(highScoreSongCEasy);
 		
 		highScoreSongAHard = new JLabel("There is no top highscore for \"Bad Girl\" on hard mode.");
+		//reads songAHard
 		panel3.add(highScoreSongAHard);
 		highScoreSongBHard = new JLabel("There is no top highscore for \"Wordkill\" on hard mode.");
+		//reads songBHard
 		panel3.add(highScoreSongBHard);
 		highScoreSongCHard = new JLabel("There is no top highscore for \"Stop It\" on hard mode.");
+		//reads songCHard
 		panel3.add(highScoreSongCHard);
 		
 	}
