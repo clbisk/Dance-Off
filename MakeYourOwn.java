@@ -98,25 +98,25 @@ public class MakeYourOwn extends JPanel {
 				//System.out.println("right");
 				dancerPanel.turnRight();
 				MakeYerOwn.right();
-				System.out.print("new RightArrow("+(MakeYerOwn.time)+"), ");
+				System.out.print("new RightArrow("+(MakeYerOwn.getSongTime())+"), ");
 			}
 			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 				//System.out.println("left");
 				dancerPanel.turnLeft();
 				MakeYerOwn.left();
-				System.out.print("new LeftArrow("+(MakeYerOwn.time)+"), ");
+				System.out.print("new LeftArrow("+(MakeYerOwn.getSongTime())+"), ");
 			}
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
 				//System.out.println("up");
 				dancerPanel.turnUp();
 				MakeYerOwn.up();
-				System.out.print("new UpArrow("+(MakeYerOwn.time)+"), ");
+				System.out.print("new UpArrow("+(MakeYerOwn.getSongTime())+"), ");
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 				//System.out.println("down");
 				dancerPanel.turnDown();
 				MakeYerOwn.down();
-				System.out.print("new DownArrow("+(MakeYerOwn.time)+"), ");
+				System.out.print("new DownArrow("+(MakeYerOwn.getSongTime())+"), ");
 			}
 		}
 

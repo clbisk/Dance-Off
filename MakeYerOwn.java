@@ -104,7 +104,7 @@ public class MakeYerOwn	extends JPanel	{
 		}
 	}
 	
-	private static long getSongTime() {
+	public static long getSongTime() {
 		return System.currentTimeMillis()-songStart;
 	}
 
