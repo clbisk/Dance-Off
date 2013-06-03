@@ -106,7 +106,7 @@ public class MakeYerOwn	extends JPanel	{
 	private class Listener implements ActionListener {
 		/** redraws	panel	*/
 		public void	actionPerformed(ActionEvent e) {
-			if	(time	< 58000)	{
+			if	(time	< 5000)	{
 				//clears	buffer
 				myBuffer.setColor(new Color(237,	237, 237));
 				myBuffer.fillRect(0,0,600,600);
@@ -134,6 +134,7 @@ public class MakeYerOwn	extends JPanel	{
 				} catch (IOException ioe) {
 					warn(name, ioe);
 				}
+				timer.stop();
 				Danceoff.displayTitleScreen();
 			}
 		}
@@ -181,4 +182,5 @@ public class MakeYerOwn	extends JPanel	{
 	public static void down() {
 		arrows.add(new	DownArrow(time+1000));
 	}
+
 }

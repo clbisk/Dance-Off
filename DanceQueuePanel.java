@@ -129,6 +129,7 @@ public class DanceQueuePanel extends JPanel {
 				}
 				else {
 					System.out.println("This level has not	yet been	created!");
+					timer.stop();
 				}
 				//increments time	count
 				time += 5;

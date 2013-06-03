@@ -80,7 +80,7 @@ public class TitleScreen extends JPanel {
 	private class NewSongListener implements ActionListener {
 		/**exits game*/
 		public void actionPerformed(ActionEvent d) {
-			Danceoff.newSong();
+			Danceoff.newSongInstructions();
 		}
 	}
 }

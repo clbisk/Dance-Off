@@ -39,6 +39,7 @@ public class Danceoff {
 		// accesses title screen layout from TitleScreen class
 		frame.setContentPane(new TitleScreen());
 		frame.setVisible(true);
+		//frame.setFocusable(true);
 	}
 
 	/** displays instructions panel */
@@ -63,6 +64,12 @@ public class Danceoff {
 	}
 	
 	/** displays song creater panel */
+	public static void newSongInstructions(){
+		MyoInstructionScreen myoInstructions = new MyoInstructionScreen();
+		frame.setContentPane(myoInstructions);
+		frame.setVisible(true);
+	}
+	
 	public static void newSong() {
 		MakeYourOwn makeyrown = new MakeYourOwn();
 		frame.setContentPane(makeyrown);
