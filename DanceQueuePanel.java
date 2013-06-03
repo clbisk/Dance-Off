@@ -66,7 +66,7 @@ public class DanceQueuePanel extends JPanel {
 		setFocusable(true);
 		//picks instructions	based	on	song & level
 		if	(Danceoff.getSong() == -1 && Danceoff.getDifficulty()	==	0)	{
-			arrows =	new Arrow[]	{new UpArrow(1000), new	DownArrow(1000), new	LeftArrow(3000)};
+			arrows =	new Arrow[]	{ new LeftArrow(2475), new RightArrow(3460), new LeftArrow(4280), new RightArrow(5205), new LeftArrow(5695), new RightArrow(6165), new LeftArrow(7135), new RightArrow(7610), new LeftArrow(8095), new RightArrow(9060), new LeftArrow(9070), new DownArrow(10040), new UpArrow(10055), new RightArrow(10980), new LeftArrow(10990), new UpArrow(11460), new DownArrow(11470), new LeftArrow(11930), new RightArrow(12840), new LeftArrow(13310), new RightArrow(13820), new LeftArrow(14775), new RightArrow(15255), new LeftArrow(15755), new RightArrow(16685), new LeftArrow(16695), new RightArrow(17615), new LeftArrow(17625), new RightArrow(18115), new LeftArrow(18125), new DownArrow(18600), new UpArrow(18610), new RightArrow(19070), new LeftArrow(19080), new RightArrow(19555), new LeftArrow(19565), new RightArrow(20530), new UpArrow(20540), new UpArrow(21000), new LeftArrow(21010), new RightArrow(21480), new UpArrow(21490), new UpArrow(22455), new LeftArrow(22470), new RightArrow(22900), new UpArrow(22920), new UpArrow(23405), new LeftArrow(23415), new RightArrow(24355), new UpArrow(24370), new LeftArrow(24825), new UpArrow(24835), new RightArrow(25310), new LeftArrow(25325), new DownArrow(25765), new DownArrow(26045), new DownArrow(26315), new DownArrow(26760), new UpArrow(27230), new LeftArrow(27945), new RightArrow(28230), new UpArrow(29145), new RightArrow(29870), new LeftArrow(30135), new DownArrow(31045), new LeftArrow(31770), new RightArrow(32025), new DownArrow(32945), new RightArrow(33400), new LeftArrow(33925), new LeftArrow(34840), new RightArrow(34860), new LeftArrow(34985), new RightArrow(35780), new LeftArrow(35790), new DownArrow(36775), new UpArrow(36785), new RightArrow(37230), new LeftArrow(37240), new UpArrow(37475), new DownArrow(37485)};
 		}
 		//setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK, 3),	"DanceQueuePanel"));
 		//load images for arrows
@@ -114,7 +114,7 @@ public class DanceQueuePanel extends JPanel {
 	private class Listener implements ActionListener {
 		/** redraws	panel	*/
 		public void	actionPerformed(ActionEvent e) {
-			if ((Danceoff.getSong() == -1 && time < 51000) || (Danceoff.getSong() == 0 && time < 68000) || (Danceoff.getSong() == 1 && time < 85000)) {
+			if ((Danceoff.getSong() == -1 && time < 58000) || (Danceoff.getSong() == 0 && time < 68000) || (Danceoff.getSong() == 1 && time < 85000)) {
 				//clears	buffer
 				myBuffer.setColor(new Color(237,	237, 237));
 				myBuffer.fillRect(0,0,600,600);
@@ -144,17 +144,17 @@ public class DanceQueuePanel extends JPanel {
 				x = 0;
 				myBuffer.drawImage(leftArrowImg, x, y, null);
 			}
-			else if (arrow	instanceof RightArrow) {
-				x = 150;
-				myBuffer.drawImage(rightArrowImg, x, y, null);
-			}
 			else if (arrow	instanceof UpArrow) {
-				x = 300;
+				x = 150;
 				myBuffer.drawImage(upArrowImg, x, y, null);
+			}
+			else if (arrow	instanceof DownArrow) {
+				x = 300;
+				myBuffer.drawImage(downArrowImg, x, y, null);
 			}
 			else {
 				x = 450;
-				myBuffer.drawImage(downArrowImg, x, y, null);
+				myBuffer.drawImage(rightArrowImg, x, y, null);
 			}
 			
 			//myBuffer.setColor(Color.black);

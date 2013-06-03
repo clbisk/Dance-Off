@@ -29,7 +29,7 @@ public class MakeYerOwn	extends JPanel	{
 	private BufferedImage upArrowImg;
 	private BufferedImage downArrowImg;
 	/**scale	factor to determine how	long the	arrow	will take to get up the	screen*/
-	private static	double scaling	= 0.5;
+	private static	double scaling	= 0.6;
 	public static int	time;
 	/**
 	 *	variable	to	store	the lowest x-coordinate	of	the box where keys are
@@ -106,7 +106,7 @@ public class MakeYerOwn	extends JPanel	{
 	private class Listener implements ActionListener {
 		/** redraws	panel	*/
 		public void	actionPerformed(ActionEvent e) {
-			if	(time	< 51000)	{
+			if	(time	< 58000)	{
 				//clears	buffer
 				myBuffer.setColor(new Color(237,	237, 237));
 				myBuffer.fillRect(0,0,600,600);
@@ -144,17 +144,17 @@ public class MakeYerOwn	extends JPanel	{
 				x = 0;
 				myBuffer.drawImage(leftArrowImg,	x,	y,	null);
 			}
-			else if (arrow	instanceof RightArrow) {
-				x = 150;
-				myBuffer.drawImage(rightArrowImg, x, y, null);
-			}
 			else if (arrow	instanceof UpArrow) {
-				x = 300;
+				x = 150;
 				myBuffer.drawImage(upArrowImg, x, y, null);
+			}
+			else if (arrow	instanceof DownArrow) {
+				x = 300;
+				myBuffer.drawImage(downArrowImg, x, y, null);
 			}
 			else {
 				x = 450;
-				myBuffer.drawImage(downArrowImg,	x,	y,	null);
+				myBuffer.drawImage(rightArrowImg,	x,	y,	null);
 			}
 			
 			//myBuffer.setColor(Color.black);
