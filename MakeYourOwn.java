@@ -33,9 +33,6 @@ public class MakeYourOwn extends JPanel {
 		panel1.setLayout(new BorderLayout());
 		add(panel1, BorderLayout.CENTER);
 	
-		JPanel scorePnl = new scorePanel();
-		panel1.add(scorePnl, BorderLayout.NORTH);
-	
 		JPanel dancerPnl = new dancerPanel();
 		panel1.add(dancerPnl, BorderLayout.EAST);
 		
@@ -49,7 +46,7 @@ public class MakeYourOwn extends JPanel {
 	/**Plays WAV file corresponding to the song selected previously */
 	public static void playSong() {
 		int songChoice = Danceoff.getSong();
-		if (songChoice == -1) { //Baa Baa Black Sheep
+		if (songChoice == -1) { //Song C
 			try{
 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
@@ -60,7 +57,7 @@ public class MakeYourOwn extends JPanel {
 				ex.printStackTrace();
    		}
 		}
-		else if (songChoice == 0) { //Mary Had a Little Lamb
+		else if (songChoice == 0) { //Song B
 			try{
 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
@@ -71,7 +68,7 @@ public class MakeYourOwn extends JPanel {
 				ex.printStackTrace();
    		}
 		}
-		else { //Twinkle Twinkle Little Star
+		else { //Song A
 			try{
 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
@@ -83,33 +80,29 @@ public class MakeYourOwn extends JPanel {
    		}
 		}
 	} 
-	/**Creates arrows at intervals determined by the timer */
-	public static void timeArrows() {
-		//Uses arrays with dance queues inside
-	}
 	private class ArrowPressed implements KeyListener {
 		@Override
 		public void keyPressed(KeyEvent e) {
-			System.out.println(e.toString());
+			//System.out.println(e.toString());
 			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 				//System.out.println("right");
 				dancerPanel.turnRight();
-				DanceQueuePanel.right();
+				MakeYerOwn.right();
 			}
 			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 				//System.out.println("left");
 				dancerPanel.turnLeft();
-				DanceQueuePanel.left();
+				MakeYerOwn.left();
 			}
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
 				//System.out.println("up");
 				dancerPanel.turnUp();
-				DanceQueuePanel.up();
+				MakeYerOwn.up();
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 				//System.out.println("down");
 				dancerPanel.turnDown();
-				DanceQueuePanel.down();
+				MakeYerOwn.down();
 			}
 		}
 

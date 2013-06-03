@@ -62,7 +62,7 @@ public class GamePlayPanel extends JPanel {
 		}
 		else if (songChoice == 0) { //Mary Had a Little Lamb
 			try{
-				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
+				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("B.A.P. - Stop It Instrumental.wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
 				clip.open(audioInputStream);
 				clip.start();
@@ -73,7 +73,7 @@ public class GamePlayPanel extends JPanel {
 		}
 		else { //Twinkle Twinkle Little Star
 			try{
-				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
+				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("Epik High - Wordkill (INSTRUMENTAL).wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
 				clip.open(audioInputStream);
 				clip.start();
@@ -83,14 +83,10 @@ public class GamePlayPanel extends JPanel {
    		}
 		}
 	} 
-	/**Creates arrows at intervals determined by the timer */
-	public static void timeArrows() {
-		//Uses arrays with dance queues inside
-	}
 	private class ArrowPressed implements KeyListener {
 		@Override
 		public void keyPressed(KeyEvent e) {
-			System.out.println(e.toString());
+			//System.out.println(e.toString());
 			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 				//System.out.println("right");
 				dancerPanel.turnRight();

@@ -114,26 +114,28 @@ public class DanceQueuePanel extends JPanel {
 	private class Listener implements ActionListener {
 		/** redraws	panel	*/
 		public void	actionPerformed(ActionEvent e) {
-			//clears	buffer
-			myBuffer.setColor(new Color(237,	237, 237));
-			myBuffer.fillRect(0,0,600,600);
-			//draws box
-			myBuffer.setColor(Color.LIGHT_GRAY);
-			myBuffer.fillRect(boxXMin,	boxYMin,	(boxXMax-boxXMin), (boxYMax-boxYMin));
-			//draw arrows
-			if	(arrows != null) {
-				for (int	i = 0; i	< arrows.length; i++) {
-					drawArrow(myBuffer, time, DanceQueuePanel.arrows[i]);
+			if ((Danceoff.getSong() == -1 && time < 51000) || (Danceoff.getSong() == 0 && time < 68000) || (Danceoff.getSong() == 1 && time < 85000)) {
+				//clears	buffer
+				myBuffer.setColor(new Color(237,	237, 237));
+				myBuffer.fillRect(0,0,600,600);
+				//draws box
+				myBuffer.setColor(Color.LIGHT_GRAY);
+				myBuffer.fillRect(boxXMin,	boxYMin,	(boxXMax-boxXMin), (boxYMax-boxYMin));
+				//draw arrows
+				if	(arrows != null) {
+					for (int	i = 0; i	< arrows.length; i++) {
+						drawArrow(myBuffer, time, DanceQueuePanel.arrows[i]);
+					}
 				}
+				else {
+					System.out.println("This level has not	yet been	created!");
+				}
+				//increments time	count
+				time += 5;
+				//repaints
+				repaint();
+				//scheduleNextFrame();
 			}
-			else {
-				System.out.println("This level has not	yet been	created!");
-			}
-			//increments time	count
-			time += 5;
-			//repaints
-			repaint();
-			//scheduleNextFrame();
 		}
 		public void	drawArrow(Graphics myBuffer, int	time,	Arrow	arrow) {
 			int x;
