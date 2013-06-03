@@ -14,7 +14,7 @@ import java.util.logging.*;
  *	panel	to	display dance queues	for gameplay -- located	to	west of the	gameplay
  *	panel
  */
-public class MakeYerOwn extends JPanel {
+public class MakeYerOwn	extends JPanel	{
 	//	private variables
 	/**
 	 *	an	array	of	Arrow	objects that will	serve	to	store	the coordinates of
@@ -64,20 +64,20 @@ public class MakeYerOwn extends JPanel {
 		timer	= new	Timer(5,	new Listener());
 		timer.start();
 		setFocusable(true);
-		arrows = new ArrayList();
+		arrows =	new ArrayList();
 		//setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK, 3),	"MakeYerOwn"));
-		//load images for arrows
+		//load images for	arrows
 		rightArrowImg = null;
-		leftArrowImg = null;
+		leftArrowImg =	null;
 		upArrowImg = null;
-		downArrowImg = null;
+		downArrowImg =	null;
 		try {
-		    rightArrowImg = ImageIO.read(new File("arrowB right.png"));
-			 leftArrowImg = ImageIO.read(new File("arrowB left.png"));
-			 upArrowImg = ImageIO.read(new File("arrowB up copy.png"));
-			 downArrowImg = ImageIO.read(new File("arrowB down.png"));
-		} catch (IOException e) {
-			warn("YOU FAIL", e);
+			 rightArrowImg	= ImageIO.read(new File("arrowB right.png"));
+			 leftArrowImg = ImageIO.read(new	File("arrowB left.png"));
+			 upArrowImg	= ImageIO.read(new File("arrowB up copy.png"));
+			 downArrowImg = ImageIO.read(new	File("arrowB down.png"));
+		} catch (IOException	e)	{
+			warn("Oh no!", e);
 			System.exit(2);
 		}
 	}
@@ -87,12 +87,12 @@ public class MakeYerOwn extends JPanel {
 	}
 
 	//	methods
-	/**warns events*/
-	private void warn(String msg, Throwable t) {
-		Logger.getLogger(getClass().getName()).log(Level.WARNING, msg, t);
+	/**warns	events*/
+	public void warn(String msg,	Throwable t) {
+		Logger.getLogger(getClass().getName()).log(Level.WARNING, msg,	t);
 	}
 	
-	/** getter for	private arraylist arrows */
+	/** getter for	private arraylist	arrows */
 	private static	ArrayList<Arrow> getArrows() {
 		if	(arrows != null) {
 			return arrows;
@@ -106,7 +106,7 @@ public class MakeYerOwn extends JPanel {
 	private class Listener implements ActionListener {
 		/** redraws	panel	*/
 		public void	actionPerformed(ActionEvent e) {
-			if (time < 51000) {
+			if	(time	< 51000)	{
 				//clears	buffer
 				myBuffer.setColor(new Color(237,	237, 237));
 				myBuffer.fillRect(0,0,600,600);
@@ -125,15 +125,24 @@ public class MakeYerOwn extends JPanel {
 				repaint();
 			}
 			else {
+				String name = "customdance.ser";
+				try {
+					FileOutputStream fileOut = new FileOutputStream(name);
+				 	ObjectOutputStream	out = new ObjectOutputStream(fileOut);
+				  	out.writeObject(arrows);
+					out.close();
+				} catch (IOException ioe) {
+					warn(name, ioe);
+				}
 				Danceoff.displayTitleScreen();
 			}
 		}
 		public void	drawArrow(Graphics myBuffer, int	time,	Arrow	arrow) {
 			int x;
-			int y = (int)((arrow.startTime	- time)*scaling);
+			int y	= (int)((arrow.startTime	- time)*scaling);
 			if	(arrow instanceof	LeftArrow) {
 				x = 0;
-				myBuffer.drawImage(leftArrowImg, x, y, null);
+				myBuffer.drawImage(leftArrowImg,	x,	y,	null);
 			}
 			else if (arrow	instanceof RightArrow) {
 				x = 150;
@@ -145,31 +154,31 @@ public class MakeYerOwn extends JPanel {
 			}
 			else {
 				x = 450;
-				myBuffer.drawImage(downArrowImg, x, y, null);
+				myBuffer.drawImage(downArrowImg,	x,	y,	null);
 			}
 			
 			//myBuffer.setColor(Color.black);
 			//myBuffer.drawLine(0,0,x,y);
 			
-			//Image	img = Toolkit.getDefaultToolkit().getImage("arrowB down.png");
+			//Image	img =	Toolkit.getDefaultToolkit().getImage("arrowB	down.png");
 			myBuffer.finalize();
 		}
 	}
 	
 	/**method to handle right arrow key	presses*/
 	public static void right()	{
-		arrows.add(new RightArrow(time+1000));
+		arrows.add(new	RightArrow(time+1000));
 	}
 	/**method to handle left arrow key presses*/
 	public static void left() {
-		arrows.add(new LeftArrow(time+1000));
+		arrows.add(new	LeftArrow(time+1000));
 	}
 	/**method to handle down arrow key presses*/
 	public static void up()	{
-		arrows.add(new UpArrow(time+1000));
+		arrows.add(new	UpArrow(time+1000));
 	}
 	/**method to handle up arrow key	presses*/
 	public static void down() {
-		arrows.add(new DownArrow(time+1000));
+		arrows.add(new	DownArrow(time+1000));
 	}
 }
