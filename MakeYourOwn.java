@@ -81,7 +81,7 @@ public class MakeYourOwn extends JPanel {
 // 		}
 			try{
 				//AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("Love Love Love - Epik High (INSTRUMENTAL).wav").getAbsoluteFile());
-				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("B.A.P. - Stop It Instrumental.wav").getAbsoluteFile());
+				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
 				clip.open(audioInputStream);
 				clip.start();

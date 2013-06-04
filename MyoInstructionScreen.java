@@ -29,7 +29,7 @@ public class MyoInstructionScreen extends JPanel {
 		panel2.setLayout(new FlowLayout());
 		add(panel2, BorderLayout.CENTER);
 		
-		ImageIcon text = new ImageIcon(this.getClass().getResource("instructionsss.png"));
+		ImageIcon text = new ImageIcon(this.getClass().getResource("myo instructionsss copy.png"));
 		instructions = new JLabel(text);
 		panel2.add(instructions);
 	}

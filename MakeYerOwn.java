@@ -113,7 +113,7 @@ public class MakeYerOwn	extends JPanel	{
 		/** redraws	panel	*/
 		public void	actionPerformed(ActionEvent e) {
 			//if	(time	< 50000)	{
-			if (getSongTime() < 65000) {
+			if (getSongTime() < 75000) {
 				//clears	buffer
 				myBuffer.setColor(new Color(237,	237, 237));
 				myBuffer.fillRect(0,0,600,600);
