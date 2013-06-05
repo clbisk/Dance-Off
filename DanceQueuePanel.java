@@ -157,70 +157,82 @@ public class DanceQueuePanel extends JPanel {
 				//scheduleNextFrame();
 			}
 			else {
-				if (Danceoff.getSong() == -1 && Danceoff.getDifficulty() == 0) {
-					String name = "songCEasy.ser";
-					try {
-						FileOutputStream fileOut = new FileOutputStream(name);
-					 	ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					  	out.writeObject(scorePanel.getScore());
-						out.close();
-					} catch (IOException ioe) {
-						warn(name, ioe);
+				//creates a scanner for reading files
+				Scanner infile = null;
+				try {
+					String filename = "high scores.txt";
+					infile = new Scanner(new File(filename));
+				} catch (FileNotFoundException e) {
+					//creates a scanner for writting to files
+					System.setOut(new PrintStream(new FileOutputStream("high scores.txt")));
+					for (int i = 0; i < 6; i++)
+						System.out.println("0");
+					String filename = "high scores.txt";
+					infile = new Scanner(new File(filename));
+				}
+				//reads all highscores into array
+				int[] numbers = new int[6];
+				for (int i = 0; i < 6; i++) {
+					numbers[i] = infile.nextInt();
+				}
+				//creates a scanner for writting to files
+				System.setOut(new PrintStream(new FileOutputStream("high scores.txt")));
+				//overwrites highscores if score is new highscore
+				if (Danceoff.getSong() == -1 && Danceoff.getDifficulty == 0) {
+					if numbers[0] < ScorePanel.getScore() {
+						System.out.println("" + ScorePanel.getScore());
+						if (int x = 1; x < 6; x++) {
+							System.out.println("" + numbers[x]);
+						}
 					}
 				}
-				if (Danceoff.getSong() == 0 && Danceoff.getDifficulty() == 0) {
-					String name = "songBEasy.ser";
-					try {
-						FileOutputStream fileOut = new FileOutputStream(name);
-					 	ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					  	out.writeObject(scorePanel.getScore());
-						out.close();
-					} catch (IOException ioe) {
-						warn(name, ioe);
+				if (Danceoff.getSong() == -1 && Danceoff.getDifficulty == 1) {
+					if numbers[1] < ScorePanel.getScore() {
+						System.out.println("" + numbers[0]);
+						System.out.println("" + ScorePanel.getScore());
+						if (int x = 2; x < 6; x++) {
+							System.out.println("" + numbers[x]);
+						}
 					}
 				}
-				if (Danceoff.getSong() == 1 && Danceoff.getDifficulty() == 0) {
-					String name = "songAEasy.ser";
-					try {
-						FileOutputStream fileOut = new FileOutputStream(name);
-					 	ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					  	out.writeObject(scorePanel.getScore());
-						out.close();
-					} catch (IOException ioe) {
-						warn(name, ioe);
+				if (Danceoff.getSong() == 0 && Danceoff.getDifficulty == 0) {
+					if numbers[2] < ScorePanel.getScore() {
+						System.out.println("" + numbers[0]);
+						System.out.println("" + numbers[1]);
+						System.out.println("" + ScorePanel.getScore());
+						if (int x = 3; x < 6; x++) {
+							System.out.println("" + numbers[x]);
+						}
 					}
 				}
-				if (Danceoff.getSong() == -1 && Danceoff.getDifficulty() == 1) {
-					String name = "songCHard.ser";
-					try {
-						FileOutputStream fileOut = new FileOutputStream(name);
-					 	ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					  	out.writeObject(scorePanel.getScore());
-						out.close();
-					} catch (IOException ioe) {
-						warn(name, ioe);
+				if (Danceoff.getSong() == 0 && Danceoff.getDifficulty == 1) {
+					if numbers[3] < ScorePanel.getScore() {
+						for (int q = 0; q < 3; q++) {
+							System.out.println("" + numbers[q]);
+						}
+						System.out.println("" + ScorePanel.getScore());
+						if (int x = 4; x < 6; x++) {
+							System.out.println("" + numbers[x]);
+						}
 					}
 				}
-				if (Danceoff.getSong() == 0 && Danceoff.getDifficulty() == 1) {
-					String name = "songBHard.ser";
-					try {
-						FileOutputStream fileOut = new FileOutputStream(name);
-					 	ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					  	out.writeObject(scorePanel.getScore());
-						out.close();
-					} catch (IOException ioe) {
-						warn(name, ioe);
+				if (Danceoff.getSong() == 1 && Danceoff.getDifficulty == 0) {
+					if numbers[4] < ScorePanel.getScore() {
+						for (int q = 0; q < 4; q++) {
+							System.out.println("" + numbers[q]);
+						}
+						System.out.println("" + ScorePanel.getScore());
+						if (int x = 5; x < 6; x++) {
+							System.out.println("" + numbers[x]);
+						}
 					}
 				}
-				if (Danceoff.getSong() == 1 && Danceoff.getDifficulty() == 1) {
-					String name = "songAHard.ser";
-					try {
-						FileOutputStream fileOut = new FileOutputStream(name);
-					 	ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					  	out.writeObject(scorePanel.getScore());
-						out.close();
-					} catch (IOException ioe) {
-						warn(name, ioe);
+				if (Danceoff.getSong() == 1 && Danceoff.getDifficulty == 1) {
+					if numbers[5] < ScorePanel.getScore() {
+						for (int q = 0; q < 5; q++) {
+							System.out.println("" + numbers[q]);
+						}
+						System.out.println("" + ScorePanel.getScore());
 					}
 				}
 				timer.stop();
