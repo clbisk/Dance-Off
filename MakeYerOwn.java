@@ -95,7 +95,7 @@ public class MakeYerOwn	extends JPanel	{
 	}
 	
 	/** getter for	private arraylist	arrows */
-	private static	ArrayList<Arrow> getArrows() {
+	public static	ArrayList<Arrow> getArrows() {
 		if	(arrows != null) {
 			return arrows;
 		}
@@ -130,15 +130,6 @@ public class MakeYerOwn	extends JPanel	{
 				repaint();
 			}
 			else {
-				String name = "customdance.ser";
-				try {
-					FileOutputStream fileOut = new FileOutputStream(name);
-				 	ObjectOutputStream	out = new ObjectOutputStream(fileOut);
-				  	out.writeObject(arrows);
-					out.close();
-				} catch (IOException ioe) {
-					warn(name, ioe);
-				}
 				timer.stop();
 				Danceoff.displayTitleScreen();
 			}
