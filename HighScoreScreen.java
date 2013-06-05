@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 
 /** Description of class HighScoreScreen*/
 public class HighScoreScreen extends JPanel {
@@ -44,13 +45,29 @@ public class HighScoreScreen extends JPanel {
 		panel2.add(panel3);
 		
 		highScoreSongAEasy = new JLabel("There is no top highscore for \"Bad Girl\" on easy mode.");
-		//reads songAEasy.ser for hs
+		//reads songAEasy.ser for highscore
+      try {
+			Integer hs;
+         FileInputStream fileIn = new FileInputStream("songAEasy.ser");
+         ObjectInputStream in = new ObjectInputStream(fileIn);
+         hs = (Integer)in.readObject();
+         in.close();
+         fileIn.close();
+			highScoreSongAEasy.setText("The top highscore for \"Bad Girl\" on easy mode is " + hs + " points!");
+      }catch(IOException i) {
+         System.out.println("error reading highscores");
+         return;
+      }catch(ClassNotFoundException c) {
+         System.out.println("Class not found");
+         return;
+      }
 		panel3.add(highScoreSongAEasy);
+		
 		highScoreSongBEasy = new JLabel("There is no top highscore for \"Wordkill\" on easy mode.");
-		//reads songBEasy.ser for hs
+		//reads songBEasy.ser for highscore
 		panel3.add(highScoreSongBEasy);
 		highScoreSongCEasy = new JLabel("There is no top highscore for \"Stop It\" on easy mode.");
-		//reads songCEasy.ser for hs
+		//reads songCEasy.ser for highscore
 		panel3.add(highScoreSongCEasy);
 		
 		highScoreSongAHard = new JLabel("There is no top highscore for \"Bad Girl\" on hard mode.");

@@ -162,7 +162,7 @@ public class DanceQueuePanel extends JPanel {
 					try {
 						FileOutputStream fileOut = new FileOutputStream(name);
 					 	ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					  	out.writeObject(arrows);
+					  	out.writeObject(scorePanel.getScore());
 						out.close();
 					} catch (IOException ioe) {
 						warn(name, ioe);
@@ -173,7 +173,7 @@ public class DanceQueuePanel extends JPanel {
 					try {
 						FileOutputStream fileOut = new FileOutputStream(name);
 					 	ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					  	out.writeObject(arrows);
+					  	out.writeObject(scorePanel.getScore());
 						out.close();
 					} catch (IOException ioe) {
 						warn(name, ioe);
@@ -184,7 +184,7 @@ public class DanceQueuePanel extends JPanel {
 					try {
 						FileOutputStream fileOut = new FileOutputStream(name);
 					 	ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					  	out.writeObject(arrows);
+					  	out.writeObject(scorePanel.getScore());
 						out.close();
 					} catch (IOException ioe) {
 						warn(name, ioe);
@@ -195,7 +195,7 @@ public class DanceQueuePanel extends JPanel {
 					try {
 						FileOutputStream fileOut = new FileOutputStream(name);
 					 	ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					  	out.writeObject(arrows);
+					  	out.writeObject(scorePanel.getScore());
 						out.close();
 					} catch (IOException ioe) {
 						warn(name, ioe);
@@ -206,7 +206,7 @@ public class DanceQueuePanel extends JPanel {
 					try {
 						FileOutputStream fileOut = new FileOutputStream(name);
 					 	ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					  	out.writeObject(arrows);
+					  	out.writeObject(scorePanel.getScore());
 						out.close();
 					} catch (IOException ioe) {
 						warn(name, ioe);
@@ -217,7 +217,7 @@ public class DanceQueuePanel extends JPanel {
 					try {
 						FileOutputStream fileOut = new FileOutputStream(name);
 					 	ObjectOutputStream out = new ObjectOutputStream(fileOut);
-					  	out.writeObject(arrows);
+					  	out.writeObject(scorePanel.getScore());
 						out.close();
 					} catch (IOException ioe) {
 						warn(name, ioe);
