@@ -44,41 +44,44 @@ public class HighScoreScreen extends JPanel {
 		panel3.setLayout(new BoxLayout(panel3, BoxLayout.Y_AXIS));
 		panel2.add(panel3);
 		
-		highScoreSongAEasy = new JLabel("There is no top highscore for \"Bad Girl\" on easy mode.");
-		//reads songAEasy.ser for highscore
-      try {
-			Integer hs;
-         FileInputStream fileIn = new FileInputStream("songAEasy.ser");
-         ObjectInputStream in = new ObjectInputStream(fileIn);
-         hs = (Integer)in.readObject();
-         in.close();
-         fileIn.close();
-			highScoreSongAEasy.setText("The top highscore for \"Bad Girl\" on easy mode is " + hs + " points!");
-      }catch(IOException i) {
-         System.out.println("error reading highscores");
-         return;
-      }catch(ClassNotFoundException c) {
-         System.out.println("Class not found");
-         return;
-      }
+		highScoreSongAEasy = new JLabel("There is no top highscore for \"Wordkill\" on easy mode.");
 		panel3.add(highScoreSongAEasy);
-		
-		highScoreSongBEasy = new JLabel("There is no top highscore for \"Wordkill\" on easy mode.");
-		//reads songBEasy.ser for highscore
+		highScoreSongBEasy = new JLabel("There is no top highscore for \"Stop It\" on easy mode.");
 		panel3.add(highScoreSongBEasy);
-		highScoreSongCEasy = new JLabel("There is no top highscore for \"Stop It\" on easy mode.");
-		//reads songCEasy.ser for highscore
+		highScoreSongCEasy = new JLabel("There is no top highscore for \"Bad Girl\" on easy mode.");
 		panel3.add(highScoreSongCEasy);
-		
-		highScoreSongAHard = new JLabel("There is no top highscore for \"Bad Girl\" on hard mode.");
-		//reads songAHard
+		highScoreSongAHard = new JLabel("There is no top highscore for \"Wordkill\" on hard mode.");
 		panel3.add(highScoreSongAHard);
-		highScoreSongBHard = new JLabel("There is no top highscore for \"Wordkill\" on hard mode.");
-		//reads songBHard
+		highScoreSongBHard = new JLabel("There is no top highscore for \"Stop It\" on hard mode.");
 		panel3.add(highScoreSongBHard);
-		highScoreSongCHard = new JLabel("There is no top highscore for \"Stop It\" on hard mode.");
-		//reads songCHard
+		highScoreSongCHard = new JLabel("There is no top highscore for \"Bad Girl\" on hard mode.");
 		panel3.add(highScoreSongCHard);
+		
+		//creates a scanner for reading files
+		Scanner infile = null;
+		try {
+			String filename = "high scores.txt";
+			infile = new Scanner(new File(filename));
+		} catch (FileNotFoundException e) {
+		}
+		//reads all highscores into array
+		int[] numbers = new int[6];
+		for (int i = 0; i < 6; i++) {
+			numbers[i] = infile.nextInt();
+		}
+		//rewrites JLabels if highscores exist
+		if (numbers[0] != 0)
+			highScoreSongAEasy.setText("The highscore for \"Wordkill\" on easy mode is" + numbers[0]);
+		if (numbers[1] != 0)
+			highScoreSongAHard.setText("The highscore for \"Wordkill\" on hard mode is" + numbers[1]);
+		if (numbers[2] != 0)
+			highScoreSongBEasy.setText("The highscore for \"Stop It\" on easy mode is" + numbers[2]);
+		if (numbers[3] != 0)
+			highScoreSongBHard.setText("The highscore for \"Stop It\" on hard mode is" + numbers[3]);
+		if (numbers[4] != 0)
+			highScoreSongCEasy.setText("The highscore for \"Bad Girl\" on easy mode is" + numbers[4]);
+		if (numbers[5] != 0)
+			highScoreSongCHard.setText("The highscore for \"Bad Girl\" on hard mode is" + numbers[5]);
 		
 	}
 	/** Back Listener for High Scores*/
