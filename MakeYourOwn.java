@@ -46,42 +46,9 @@ public class MakeYourOwn extends JPanel {
 	/**Plays WAV file corresponding to the song selected previously */
 	public static void playSong() {
 		int songChoice = Danceoff.getSong();
-		// if (songChoice == -1) { //Song C
-// 			try{
-// 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
-// 				Clip clip = AudioSystem.getClip();
-// 				clip.open(audioInputStream);
-// 				clip.start();
-//    		}catch(Exception ex){
-// 				System.out.println("Error with playing sound.");
-// 				ex.printStackTrace();
-//    		}
-// 		}
-// 		else if (songChoice == 0) { //Song B
-// 			try{
-// 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
-// 				Clip clip = AudioSystem.getClip();
-// 				clip.open(audioInputStream);
-// 				clip.start();
-//    		}catch(Exception ex){
-// 				System.out.println("Error with playing sound.");
-// 				ex.printStackTrace();
-//    		}
-// 		}
-// 		else { //Song A
-// 			try{
-// 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
-// 				Clip clip = AudioSystem.getClip();
-// 				clip.open(audioInputStream);
-// 				clip.start();
-//    		}catch(Exception ex){
-// 				System.out.println("Error with playing sound.");
-// 				ex.printStackTrace();
-//    		}
-// 		}
 			try{
-				//AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("Love Love Love - Epik High (INSTRUMENTAL).wav").getAbsoluteFile());
-				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
+				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("Love Love Love - Epik High (INSTRUMENTAL).wav").getAbsoluteFile());
+				//AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
 				clip.open(audioInputStream);
 				clip.start();
