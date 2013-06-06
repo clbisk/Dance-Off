@@ -23,6 +23,7 @@ public class Danceoff {
 	 * represented by 0, and hard difficulty being represented by 1
 	 */
 	private static int difficulty;
+	public static boolean songMade = false;
 	private static JFrame frame = new JFrame("Dance-off!");
 
 	// methods
@@ -123,6 +124,11 @@ public class Danceoff {
 	public static void songEnd() {
 		ScoreScreen screen = new ScoreScreen();
 		frame.setContentPane(screen);
+		frame.setVisible(true);
+	}
+	
+	public static void youFail() {
+		frame.setContentPane(new ErrorPlayingCustomSongScreen());
 		frame.setVisible(true);
 	}
 }

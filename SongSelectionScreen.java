@@ -67,7 +67,7 @@ public class SongSelectionScreen extends JPanel {
 		button4.addActionListener(new BackListener());
 		button4.setPreferredSize(new Dimension(300, 30));
 		
-		if ("customdance.ser" != null){
+		if (Danceoff.songMade == true){
 			JButton button5 = new JButton("Your Song");
 			button5.addActionListener(new SongDListener());
 			button5.setPreferredSize(new Dimension(300, 30));

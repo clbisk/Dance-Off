@@ -82,6 +82,7 @@ public class MakeYerOwn	extends JPanel	{
 			System.exit(2);
 		}
 		songStart = System.currentTimeMillis();
+		Danceoff.songMade = true;
 	}
 		
 	public void	paintComponent(Graphics	g)	{
@@ -129,6 +130,7 @@ public class MakeYerOwn	extends JPanel	{
 				repaint();
 			}
 			else {
+				DanceQueuePanel.yourArrows = arrows.toArray(new Arrow[arrows.size()]);
 				timer.stop();
 				Danceoff.displayTitleScreen();
 			}

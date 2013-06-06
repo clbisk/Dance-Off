@@ -29,8 +29,10 @@ public class DanceQueuePanel extends JPanel {
 	private BufferedImage leftArrowImg;
 	private BufferedImage upArrowImg;
 	private BufferedImage downArrowImg;
+	/** an array of Arrow objects that makes up the custom song created with MakeYourOwn*/
+	public static Arrow[] yourArrows;
 	private static long songStart;
-	/**scale	factor to determine how	long the	arrow	will take to get up the	screen*/
+	/** scale	factor to determine how	long the	arrow	will take to get up the	screen*/
 	private static	double scaling	= 0.6;
 	/**
 	 *	variable	to	store	the lowest x-coordinate	of	the box where keys are
@@ -86,7 +88,7 @@ public class DanceQueuePanel extends JPanel {
 		else if (Danceoff.getSong() == 2) {
 			ArrayList<Arrow> womp = MakeYerOwn.getArrows();
 			//arrows = womp.toArray(Arrow[] a);
-			arrows = womp.toArray( new Arrow[womp.size()]);
+			arrows = yourArrows;
 		}
 
 		//setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK, 3),	"DanceQueuePanel"));
@@ -101,7 +103,7 @@ public class DanceQueuePanel extends JPanel {
 			 upArrowImg = ImageIO.read(new File("arrowB up copy.png"));
 			 downArrowImg = ImageIO.read(new File("arrowB down.png"));
 		} catch (IOException e) {
-			warn("YOU FAIL", e);
+			warn("oh no!", e);
 			System.exit(2);
 		}
 		songStart = System.currentTimeMillis();
@@ -118,7 +120,7 @@ public class DanceQueuePanel extends JPanel {
 	}
 	
 	/** getter for	private array arrows	*/
-	private static	Arrow[] getArrows() {
+	public static	Arrow[] getArrows() {
 		if	(arrows != null) {
 			return arrows;
 		}
@@ -132,7 +134,7 @@ public class DanceQueuePanel extends JPanel {
 	}
 
 	/** getter for	element of private array arrows */
-	private static	Arrow	getArrow(int arrowPos) {
+	public static	Arrow	getArrow(int arrowPos) {
 		return arrows[arrowPos];
 	}
 
@@ -141,7 +143,7 @@ public class DanceQueuePanel extends JPanel {
 		/** redraws	panel	*/
 		public void	actionPerformed(ActionEvent e) {
 			long songTime = getSongTime();
-			if ((Danceoff.getSong() == -1 && songTime < 63000) || (Danceoff.getSong() == 0 && songTime < 90000) || (Danceoff.getSong() == 1 && songTime < 73000)) {
+			if ((Danceoff.getSong() == -1 && songTime < 73000) || (Danceoff.getSong() == 0 && songTime < 85000) || (Danceoff.getSong() == 1 && songTime < 71000) || (Danceoff.getSong() == 2 && songTime < 1000)) {
 				//63000, 90000, 70000 
 				//clears	buffer
 				myBuffer.setColor(new Color(237,	237, 237));
@@ -156,14 +158,15 @@ public class DanceQueuePanel extends JPanel {
 					}
 				}
 				else {
-					System.out.println("This level has not	yet been	created!");
+					//warn user that level hasn't been created then exit level
+					Danceoff.youFail();
 					timer.stop();
 				}
 				//repaints
 				repaint();
 				//scheduleNextFrame();
 			}
-			else if (Danceoff.getSong()==-1 || Danceoff.getSong()==0 || Danceoff.getSong()==1) {
+			else if (Danceoff.getSong()!=2) {
 				//creates a scanner for reading files
 				Scanner infile = null;
 				try {
@@ -178,8 +181,8 @@ public class DanceQueuePanel extends JPanel {
 							System.out.println("0");
 					} catch (FileNotFoundException f) {
 					}
-			//		for (int i = 0; i < 6; i++)
-			//			System.out.println("0");
+					for (int i = 0; i < 6; i++)
+					System.out.println("0");
 					String filename = "highscores.txt";
 					try {
 						infile = new Scanner(new File(filename));
