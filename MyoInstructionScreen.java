@@ -32,6 +32,14 @@ public class MyoInstructionScreen extends JPanel {
 		ImageIcon text = new ImageIcon(this.getClass().getResource("myo instructionsss copy.png"));
 		instructions = new JLabel(text);
 		panel2.add(instructions);
+		
+		JPanel panel3 = new JPanel();
+		panel3.setLayout(new FlowLayout());
+		add(panel3, BorderLayout.NORTH);
+		
+		ImageIcon text2 = new ImageIcon(this.getClass().getResource("myo.png"));
+		title = new JLabel(text2);
+		panel3.add(title);
 	}
 	//one listener
 	private class BackListener implements ActionListener {

@@ -48,7 +48,12 @@ public class Danceoff {
 		frame.setContentPane(new InstructionScreen());
 		frame.setVisible(true);
 	}
-
+	/** displays credits panel*/
+	public static void displayCredits() {
+		// accesses instructions screen layout from InstructionScreen class
+		frame.setContentPane(new CreditsScreen());
+		frame.setVisible(true);
+	}
 	/** displays high scores panel */
 	public static void displayHighScores() {
 		// accesses high scores screen layout from HighScoreScreen class
@@ -116,6 +121,8 @@ public class Danceoff {
 		panel.requestFocusInWindow();
 	}
 	public static void songEnd() {
-		displayHighScores();
+		ScoreScreen screen = new ScoreScreen();
+		frame.setContentPane(screen);
+		frame.setVisible(true);
 	}
 }

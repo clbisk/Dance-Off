@@ -49,7 +49,7 @@ public class GamePlayPanel extends JPanel {
 	/**Plays WAV file corresponding to the song selected previously */
 	public static void playSong() {
 		int songChoice = Danceoff.getSong();
-		if (songChoice == -1) { //Baa Baa Black Sheep
+		if (songChoice == -1) { //Bad Girl - B2ST
 			try{
 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("song.wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
@@ -60,7 +60,7 @@ public class GamePlayPanel extends JPanel {
 				ex.printStackTrace();
    		}
 		}
-		else if (songChoice == 0) { //Mary Had a Little Lamb
+		else if (songChoice == 0) { //Stop It - BAP
 			try{
 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("B.A.P. - Stop It Instrumental.wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
@@ -71,9 +71,20 @@ public class GamePlayPanel extends JPanel {
 				ex.printStackTrace();
    		}
 		}
-		else { //Twinkle Twinkle Little Star
+		else if (songChoice == 1) { //Wordkill - Epik High
 			try{
 				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("Epik High - Wordkill (INSTRUMENTAL).wav").getAbsoluteFile());
+				Clip clip = AudioSystem.getClip();
+				clip.open(audioInputStream);
+				clip.start();
+   		}catch(Exception ex){
+				System.out.println("Error with playing sound.");
+				ex.printStackTrace();
+   		}
+		}
+		else { //Love Love Love - Epik High
+			try{
+				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("Love Love Love - Epik High (INSTRUMENTAL).wav").getAbsoluteFile());
 				Clip clip = AudioSystem.getClip();
 				clip.open(audioInputStream);
 				clip.start();

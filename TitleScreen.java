@@ -27,7 +27,7 @@ public class TitleScreen extends JPanel {
 		//four buttons: display instructions, display high scores, start game, and exit
 		JButton button1 = new JButton("Instructions");
       button1.addActionListener(new InstructionsListener());
-		panel.add(button1, BorderLayout.NORTH);
+		panel3.add(button1, BorderLayout.NORTH);
 		JButton button2 = new JButton("High Scores");
 		button2.addActionListener(new ShowHighScoresListener());
 		panel2.add(button2, BorderLayout.NORTH);
@@ -37,7 +37,9 @@ public class TitleScreen extends JPanel {
 		JButton button3 = new JButton("Start Game");
 		button3.addActionListener(new StartGameListener());
 		panel3.add(button3, BorderLayout.SOUTH);
-		
+		JButton button5= new JButton("Credits");
+		button5.addActionListener(new ShowCreditsListener());
+		panel.add(button5, BorderLayout.NORTH);
 		JButton newSong = new JButton("Create Your Own Dance");
       newSong.addActionListener(new NewSongListener());
 		panel2.add(newSong, BorderLayout.SOUTH);
@@ -60,6 +62,12 @@ public class TitleScreen extends JPanel {
 		/**calls method to display high scores*/
 		public void actionPerformed(ActionEvent b) {
 			Danceoff.displayHighScores();
+		}
+	}
+	private class ShowCreditsListener implements ActionListener {
+	/**calls method to display high scores*/
+		public void actionPerformed(ActionEvent g) {
+			Danceoff.displayCredits();
 		}
 	}
 	/**listens for start game button clicked*/
