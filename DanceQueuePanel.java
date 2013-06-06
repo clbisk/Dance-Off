@@ -143,7 +143,7 @@ public class DanceQueuePanel extends JPanel {
 		/** redraws	panel	*/
 		public void	actionPerformed(ActionEvent e) {
 			long songTime = getSongTime();
-			if ((Danceoff.getSong() == -1 && songTime < 73000) || (Danceoff.getSong() == 0 && songTime < 85000) || (Danceoff.getSong() == 1 && songTime < 71000) || (Danceoff.getSong() == 2 && songTime < 1000)) {
+			if ((Danceoff.getSong() == -1 && songTime < 71000) || (Danceoff.getSong() == 0 && songTime < 85000) || (Danceoff.getSong() == 1 && songTime < 71000) || (Danceoff.getSong() == 2 && songTime < 1000)) {
 				//63000, 90000, 70000 
 				//clears	buffer
 				myBuffer.setColor(new Color(237,	237, 237));

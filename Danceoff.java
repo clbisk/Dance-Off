@@ -55,12 +55,12 @@ public class Danceoff {
 		frame.setContentPane(new CreditsScreen());
 		frame.setVisible(true);
 	}
-	/** displays high scores panel */
-	public static void displayHighScores() {
-		// accesses high scores screen layout from HighScoreScreen class
-		frame.setContentPane(new HighScoreScreen());
-		frame.setVisible(true);
-	}
+// 	/** displays high scores panel */
+// 	public static void displayHighScores() {
+// 		// accesses high scores screen layout from HighScoreScreen class
+// 		frame.setContentPane(new HighScoreScreen());
+// 		frame.setVisible(true);
+// 	}
 
 	/** displays song selection panel */
 	public static void startGame() {
