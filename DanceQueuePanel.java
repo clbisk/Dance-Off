@@ -86,8 +86,9 @@ public class DanceQueuePanel extends JPanel {
 			arrows = new Arrow[] { new RightArrow(1067), new LeftArrow(1463), new RightArrow(1729), new LeftArrow(2475), new RightArrow(2700), new LeftArrow(2974), new RightArrow(3505), new LeftArrow(3796), new UpArrow(4535), new DownArrow(4765), new UpArrow(5050), new DownArrow(5652), new UpArrow(5926), new DownArrow(6722), new UpArrow(6949), new DownArrow(7250), new UpArrow(7791), new DownArrow(8060), new UpArrow(8546), new DownArrow(8855), new RightArrow(9086), new LeftArrow(9095), new UpArrow(9346), new DownArrow(9893), new UpArrow(10180), new RightArrow(10725), new LeftArrow(10993), new RightArrow(11542), new LeftArrow(12070), new RightArrow(12325), new LeftArrow(12854), new RightArrow(13128), new UpArrow(13683), new DownArrow(14221), new UpArrow(14469), new UpArrow(14950), new DownArrow(14960), new UpArrow(15494), new RightArrow(15760), new LeftArrow(15766), new DownArrow(16282), new UpArrow(16572), new LeftArrow(17123), new RightArrow(17132), new RightArrow(17423), new LeftArrow(18350), new RightArrow(18645), new RightArrow(20515), new LeftArrow(20812), new UpArrow(21629), new DownArrow(21639), new UpArrow(22179), new DownArrow(22189), new RightArrow(22670), new LeftArrow(22681), new UpArrow(22961), new DownArrow(22972), new LeftArrow(23463), new UpArrow(23748), new RightArrow(24000), new RightArrow(24259), new UpArrow(24269), new UpArrow(24797), new LeftArrow(24806), new LeftArrow(25258), new RightArrow(25268), new DownArrow(25829), new LeftArrow(25840), new RightArrow(26414), new LeftArrow(26935), new RightArrow(27216), new RightArrow(27441), new UpArrow(27452), new UpArrow(27964), new LeftArrow(27974), new RightArrow(28558), new LeftArrow(29055), new RightArrow(29309), new LeftArrow(29582), new UpArrow(29593), new RightArrow(30083), new UpArrow(30094), new RightArrow(30626), new LeftArrow(31201), new RightArrow(31433), new LeftArrow(31716), new RightArrow(31728), new RightArrow(32218), new LeftArrow(32227), new UpArrow(32758), new DownArrow(32768), new RightArrow(33236), new LeftArrow(33244), new DownArrow(33530), new RightArrow(33538), new DownArrow(34020), new LeftArrow(34029), new RightArrow(34307), new DownArrow(34316), new RightArrow(34873), new LeftArrow(35399), new RightArrow(35645), new RightArrow(35913), new DownArrow(35925), new DownArrow(36476), new LeftArrow(36488), new RightArrow(37043), new LeftArrow(37556), new RightArrow(37799), new UpArrow(38068), new RightArrow(38077), new LeftArrow(38587), new UpArrow(38596), new RightArrow(39099), new LeftArrow(39638), new RightArrow(39930), new UpArrow(40191), new LeftArrow(40199), new RightArrow(40716), new UpArrow(40726), new RightArrow(41276), new LeftArrow(41283), new DownArrow(41785), new RightArrow(42327), new LeftArrow(42339), new DownArrow(42573), new LeftArrow(42838), new RightArrow(42848), new UpArrow(43411), new LeftArrow(43908), new UpArrow(44186), new RightArrow(45498), new UpArrow(46024), new RightArrow(46274), new DownArrow(46774), new DownArrow(47336), new LeftArrow(47617), new UpArrow(48165), new LeftArrow(48425), new RightArrow(48988), new RightArrow(49470), new DownArrow(49764), new LeftArrow(50330), new DownArrow(50587), new LeftArrow(51084), new DownArrow(51350), new UpArrow(51857), new RightArrow(52391), new UpArrow(52648), new LeftArrow(53120), new LeftArrow(53717), new DownArrow(53979), new RightArrow(54519), new DownArrow(54794), new LeftArrow(55322), new LeftArrow(55865), new UpArrow(56136), new LeftArrow(56674), new UpArrow(56960), new RightArrow(57471), new RightArrow(57980), new DownArrow(58271), new LeftArrow(58808), new DownArrow(59079), new RightArrow(59540), new RightArrow(59824), new RightArrow(60342), new LeftArrow(60353), new UpArrow(60841), new DownArrow(60851), new LeftArrow(61116), new RightArrow(61127), new RightArrow(62474), new UpArrow(62484), new UpArrow(62989), new LeftArrow(62999), new UpArrow(63246), new RightArrow(63249), new RightArrow(64562), new DownArrow(64572), new DownArrow(65099), new LeftArrow(65109), new RightArrow(65372), new DownArrow(65385), new RightArrow(66753), new LeftArrow(66763), new UpArrow(67243), new DownArrow(67254), new LeftArrow(67524), new RightArrow(67535), new UpArrow(68065), new DownArrow(68076), new RightArrow(68317), new LeftArrow(68327)};
 		}
 		else if (Danceoff.getSong() == 2) {
-			ArrayList<Arrow> womp = MakeYerOwn.getArrows();
+			//ArrayList<Arrow> womp = MakeYerOwn.getArrows();
 			//arrows = womp.toArray(Arrow[] a);
+			System.out.println("" + yourArrows);
 			arrows = yourArrows;
 		}
 
@@ -143,7 +144,7 @@ public class DanceQueuePanel extends JPanel {
 		/** redraws	panel	*/
 		public void	actionPerformed(ActionEvent e) {
 			long songTime = getSongTime();
-			if ((Danceoff.getSong() == -1 && songTime < 71000) || (Danceoff.getSong() == 0 && songTime < 85000) || (Danceoff.getSong() == 1 && songTime < 71000) || (Danceoff.getSong() == 2 && songTime < 1000)) {
+			if ((Danceoff.getSong() == -1 && songTime < 71000) || (Danceoff.getSong() == 0 && songTime < 85000) || (Danceoff.getSong() == 1 && songTime < 71000) || (Danceoff.getSong() == 2 && songTime < 70000)) {
 				//63000, 90000, 70000 
 				//clears	buffer
 				myBuffer.setColor(new Color(237,	237, 237));
@@ -166,97 +167,97 @@ public class DanceQueuePanel extends JPanel {
 				repaint();
 				//scheduleNextFrame();
 			}
-			else if (Danceoff.getSong()!=2) {
-				//creates a scanner for reading files
-				Scanner infile = null;
-				try {
-					String filename = "highscores.txt";
-					infile = new Scanner(new File(filename));
-				} catch (FileNotFoundException d) {
-					//creates a scanner for writting to files
-					try {
-						PrintStream printed = new PrintStream(new FileOutputStream("highscores.txt"));
-						System.setOut(printed);
-						for (int i = 0; i < 6; i++)
-							System.out.println("0");
-					} catch (FileNotFoundException f) {
-					}
-					for (int i = 0; i < 6; i++)
-					System.out.println("0");
-					String filename = "highscores.txt";
-					try {
-						infile = new Scanner(new File(filename));
-					} catch (FileNotFoundException g) {
-					}
-				}
-				//reads all highscores into array
-				int[] numbers = new int[6];
-				for (int i = 0; i < 6; i++) {
-					numbers[i] = infile.nextInt();
-				}
-				//creates a scanner for writting to files
-				try {
-					System.setOut(new PrintStream(new FileOutputStream("highscores.txt")));
-				} catch (FileNotFoundException f) {
-				}
-				//overwrites highscores if score is new highscore
-				if (Danceoff.getSong() == -1 && Danceoff.getDifficulty() == 0) {
-					if (numbers[0] < scorePanel.getScore()) {
-						System.out.println("" + scorePanel.getScore());
-						for (int x = 1; x < 6; x++) {
-							System.out.println("" + numbers[x]);
-						}
-					}
-				}
-				if (Danceoff.getSong() == -1 && Danceoff.getDifficulty() == 1) {
-					if (numbers[1] < scorePanel.getScore()) {
-						System.out.println("" + numbers[0]);
-						System.out.println("" + scorePanel.getScore());
-						for (int x = 2; x < 6; x++) {
-							System.out.println("" + numbers[x]);
-						}
-					}
-				}
-				if (Danceoff.getSong() == 0 && Danceoff.getDifficulty() == 0) {
-					if (numbers[2] < scorePanel.getScore()) {
-						System.out.println("" + numbers[0]);
-						System.out.println("" + numbers[1]);
-						System.out.println("" + scorePanel.getScore());
-						for (int x = 3; x < 6; x++) {
-							System.out.println("" + numbers[x]);
-						}
-					}
-				}
-				if (Danceoff.getSong() == 0 && Danceoff.getDifficulty() == 1) {
-					if (numbers[3] < scorePanel.getScore()) {
-						for (int q = 0; q < 3; q++) {
-							System.out.println("" + numbers[q]);
-						}
-						System.out.println("" + scorePanel.getScore());
-						for (int x = 4; x < 6; x++) {
-							System.out.println("" + numbers[x]);
-						}
-					}
-				}
-				if (Danceoff.getSong() == 1 && Danceoff.getDifficulty() == 0) {
-					if (numbers[4] < scorePanel.getScore()) {
-						for (int q = 0; q < 4; q++) {
-							System.out.println("" + numbers[q]);
-						}
-						System.out.println("" + scorePanel.getScore());
-						for (int x = 5; x < 6; x++) {
-							System.out.println("" + numbers[x]);
-						}
-					}
-				}
-				if (Danceoff.getSong() == 1 && Danceoff.getDifficulty() == 1) {
-					if (numbers[5] < scorePanel.getScore()) {
-						for (int q = 0; q < 5; q++) {
-							System.out.println("" + numbers[q]);
-						}
-						System.out.println("" + scorePanel.getScore());
-					}
-				}
+			// else if (Danceoff.getSong()!=2) {
+// 				//creates a scanner for reading files
+// 				Scanner infile = null;
+// 				try {
+// 					String filename = "highscores.txt";
+// 					infile = new Scanner(new File(filename));
+// 				} catch (FileNotFoundException d) {
+// 					//creates a scanner for writting to files
+// 					try {
+// 						PrintStream printed = new PrintStream(new FileOutputStream("highscores.txt"));
+// 						System.setOut(printed);
+// 						for (int i = 0; i < 6; i++)
+// 							System.out.println("0");
+// 					} catch (FileNotFoundException f) {
+// 					}
+// 					for (int i = 0; i < 6; i++)
+// 					System.out.println("0");
+// 					String filename = "highscores.txt";
+// 					try {
+// 						infile = new Scanner(new File(filename));
+// 					} catch (FileNotFoundException g) {
+// 					}
+// 				}
+// 				//reads all highscores into array
+// 				int[] numbers = new int[6];
+// 				for (int i = 0; i < 6; i++) {
+// 					numbers[i] = infile.nextInt();
+// 				}
+// 				//creates a scanner for writting to files
+// 				try {
+// 					System.setOut(new PrintStream(new FileOutputStream("highscores.txt")));
+// 				} catch (FileNotFoundException f) {
+// 				}
+// 				//overwrites highscores if score is new highscore
+// 				if (Danceoff.getSong() == -1 && Danceoff.getDifficulty() == 0) {
+// 					if (numbers[0] < scorePanel.getScore()) {
+// 						System.out.println("" + scorePanel.getScore());
+// 						for (int x = 1; x < 6; x++) {
+// 							System.out.println("" + numbers[x]);
+// 						}
+// 					}
+// 				}
+// 				if (Danceoff.getSong() == -1 && Danceoff.getDifficulty() == 1) {
+// 					if (numbers[1] < scorePanel.getScore()) {
+// 						System.out.println("" + numbers[0]);
+// 						System.out.println("" + scorePanel.getScore());
+// 						for (int x = 2; x < 6; x++) {
+// 							System.out.println("" + numbers[x]);
+// 						}
+// 					}
+// 				}
+// 				if (Danceoff.getSong() == 0 && Danceoff.getDifficulty() == 0) {
+// 					if (numbers[2] < scorePanel.getScore()) {
+// 						System.out.println("" + numbers[0]);
+// 						System.out.println("" + numbers[1]);
+// 						System.out.println("" + scorePanel.getScore());
+// 						for (int x = 3; x < 6; x++) {
+// 							System.out.println("" + numbers[x]);
+// 						}
+// 					}
+// 				}
+// 				if (Danceoff.getSong() == 0 && Danceoff.getDifficulty() == 1) {
+// 					if (numbers[3] < scorePanel.getScore()) {
+// 						for (int q = 0; q < 3; q++) {
+// 							System.out.println("" + numbers[q]);
+// 						}
+// 						System.out.println("" + scorePanel.getScore());
+// 						for (int x = 4; x < 6; x++) {
+// 							System.out.println("" + numbers[x]);
+// 						}
+// 					}
+// 				}
+// 				if (Danceoff.getSong() == 1 && Danceoff.getDifficulty() == 0) {
+// 					if (numbers[4] < scorePanel.getScore()) {
+// 						for (int q = 0; q < 4; q++) {
+// 							System.out.println("" + numbers[q]);
+// 						}
+// 						System.out.println("" + scorePanel.getScore());
+// 						for (int x = 5; x < 6; x++) {
+// 							System.out.println("" + numbers[x]);
+// 						}
+// 					}
+// 				}
+// 				if (Danceoff.getSong() == 1 && Danceoff.getDifficulty() == 1) {
+// 					if (numbers[5] < scorePanel.getScore()) {
+// 						for (int q = 0; q < 5; q++) {
+// 							System.out.println("" + numbers[q]);
+// 						}
+// 						System.out.println("" + scorePanel.getScore());
+// 					}
+			else {
 				timer.stop();
 				Danceoff.songEnd();
 			}
