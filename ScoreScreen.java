@@ -20,17 +20,26 @@ public class ScoreScreen extends JPanel {
 		title = new JLabel(image);
 		add(title, BorderLayout.NORTH);
 		
+		JPanel paNel = new JPanel();
+		paNel.setLayout(new FlowLayout());
+		add(paNel, BorderLayout.CENTER);
+		
 		JPanel panel2 = new JPanel();
-		panel2.setLayout(new FlowLayout());
-		add(panel2, BorderLayout.CENTER);
+		panel2.setLayout(new BorderLayout());
+		paNel.add(panel2, BorderLayout.CENTER);
 		
 		JLabel score = new JLabel();
       score.setFont(new	Font("Serif", Font.BOLD, 75));
       score.setForeground(Color.red);
 		score.setText("" + scorePanel.getScore());
-      panel2.add(score);
+      panel2.add(score, BorderLayout.CENTER);
 
-		
+		JLabel grade = new JLabel();
+      grade.setFont(new	Font("Serif", Font.BOLD, 75));
+      grade.setForeground(Color.green);
+		//ifs
+		grade.setText("Your Grade: ");
+      panel2.add(grade, BorderLayout.SOUTH);
 
 	}
 	//one listener
