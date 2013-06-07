@@ -2,9 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/** Instructions screen displays the instructions for the game  */
 public class InstructionScreen extends JPanel {
+	/** JLabel containing the title of the screen  */
 	private JLabel title;
+	/** JLabel containing the instructions for the screen */
 	private JLabel instructions;
+	/** Screen has a title, instructions and a button */
 	public InstructionScreen() {
 		setLayout(new BorderLayout());
 	
@@ -28,10 +32,10 @@ public class InstructionScreen extends JPanel {
 		instructions = new JLabel(text);
 		panel2.add(instructions);
 	}
-	//one listener
+	/** One listener to return to title screen */
 	private class BackListener implements ActionListener {
+		/** Calls method to return to title screen */
 		public void actionPerformed(ActionEvent a) {
-			//calls method to display title screen
 			Danceoff.displayTitleScreen();
 		}
 	}

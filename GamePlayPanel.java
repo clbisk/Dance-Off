@@ -94,8 +94,10 @@ public class GamePlayPanel extends JPanel {
    		}
 		}
 	} 
+	/** KeyListener used in recognition of keys being pressed */
 	private class ArrowPressed implements KeyListener {
 		@Override
+		/** Method that determines key being pressed, and changes dancerPanel and DanceQueuePanel based off the key pressed */
 		public void keyPressed(KeyEvent e) {
 			//System.out.println(e.toString());
 			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
@@ -121,10 +123,12 @@ public class GamePlayPanel extends JPanel {
 		}
 
 		@Override
+		/** Checks if key is released */
 		public void keyReleased(KeyEvent e) {
 		}
 
 		@Override
+		/** Checks if key is typed */
 		public void keyTyped(KeyEvent e) {
 		}
 	}

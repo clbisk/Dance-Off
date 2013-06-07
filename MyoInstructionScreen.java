@@ -2,9 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/** Instructions for Making Your Own song */
 public class MyoInstructionScreen extends JPanel {
+	/** JLabel title of the screen  */
 	private JLabel title;
+	/** JLabel containing instructions on the screen */
 	private JLabel instructions;
+	/** Screen with title, instructions, and a button */
 	public MyoInstructionScreen() {
 		setLayout(new BorderLayout());
 	
@@ -41,14 +45,16 @@ public class MyoInstructionScreen extends JPanel {
 		title = new JLabel(text2);
 		panel3.add(title);
 	}
-	//one listener
+	/** Listener to go back to title screen */
 	private class BackListener implements ActionListener {
+		/** calls method to display title screen */
 		public void actionPerformed(ActionEvent a) {
-			//calls method to display title screen
 			Danceoff.displayTitleScreen();
 		}
 	}
+	/** Listener to continue to MakeYourOwn  */
 	private class MakeYourOwnListener implements ActionListener {
+		/** calls method to start creation of a new song  */
 		public void actionPerformed(ActionEvent a){
 			Danceoff.newSong();
 		}

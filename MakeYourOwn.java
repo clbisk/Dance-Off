@@ -10,7 +10,7 @@ import javax.sound.sampled.Clip;
 import java.io.*;
 
 
-/** GamePlayPanel */
+/** MakeYourOwn panel for making own songs */
 public class MakeYourOwn extends JPanel {
 	/** Timer used in the timing of arrows going across screen*/
 	private Timer timer;
@@ -18,12 +18,8 @@ public class MakeYourOwn extends JPanel {
 	private int song;
 	/** int difficulty is used to determine which difficulty was selected previously */
 	private int difficulty;
-	/** Border layout for GamePlayPanel.
-	*Sets up three different panels:
-	*Panel danceQueuePanel located in west area of screen;
-	*Panel scorePanel located in north area of screen;
-	*Panel dancerPanel located in south area of screen
-	*/
+	/** Border layout for MakeYourOwn.
+	*Sets up MakeYerOwn, a dancerPanel, and a KeyListener*/
 	public MakeYourOwn() {
 		//draws three panels inside itself
 		setFocusable(true);
@@ -59,8 +55,10 @@ public class MakeYourOwn extends JPanel {
 			}
 		//}
 	} 
+	/** KeyListener for sensing keys pressed */
 	private class ArrowPressed implements KeyListener {
 		@Override
+		/** Method to determine which arrow is pressed, and update dancerPanel and the screen accordingly */
 		public void keyPressed(KeyEvent e) {
 			//System.out.println(e.toString());
 			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
@@ -90,9 +88,10 @@ public class MakeYourOwn extends JPanel {
 		}
 
 		@Override
+		/** method to determine if key is released */
 		public void keyReleased(KeyEvent e) {
 		}
-
+		/** method to determine if key is typed */
 		@Override
 		public void keyTyped(KeyEvent e) {
 		}

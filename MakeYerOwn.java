@@ -21,13 +21,21 @@ public class MakeYerOwn	extends JPanel	{
 	 *	future arrows drawn on screen
 	 */
 	private static	ArrayList<Arrow> arrows;
+	/** buffer for myImage used in updating screen */
 	private BufferedImage myImage;
+	/** buffer from graphics used for updating screen */
 	private Graphics myBuffer;
+	/** timer for timing to be used alongside arrows*/
 	private Timer timer;
+	/** buffer for right arrow */
 	private BufferedImage rightArrowImg;
+	/** buffer for left arrow */
 	private BufferedImage leftArrowImg;
+	/** buffer for up arrow */
 	private BufferedImage upArrowImg;
+	/** buffer for down arrow */
 	private BufferedImage downArrowImg;
+	/** used in determining when the song starts */
 	private static long songStart;
 	/**scale	factor to determine how	long the	arrow	will take to get up the	screen*/
 	private static	double scaling	= 0.6;
@@ -84,7 +92,8 @@ public class MakeYerOwn	extends JPanel	{
 		songStart = System.currentTimeMillis();
 		Danceoff.songMade = true;
 	}
-		
+	
+	/** graphical paint component redrawing myImage */	
 	public void	paintComponent(Graphics	g)	{
 		g.drawImage(myImage,	0,	0,	getWidth(),	getHeight(), null);
 	}
@@ -105,6 +114,7 @@ public class MakeYerOwn	extends JPanel	{
 		}
 	}
 	
+	/** gets the length of the duration of the song */
 	public static long getSongTime() {
 		return System.currentTimeMillis()-songStart;
 	}
@@ -135,6 +145,7 @@ public class MakeYerOwn	extends JPanel	{
 				Danceoff.displayTitleScreen();
 			}
 		}
+		/** controls drawing instances of the various arrows at various points based off timing*/
 		public void	drawArrow(Graphics myBuffer, long time,	Arrow	arrow) {
 			int x;
 			int y	= (int)((arrow.startTime	- time) * scaling);

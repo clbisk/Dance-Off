@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-/** Description of class DifficultySlectionScreen */
+/** Difficulty Selection Screen for determining Easy or Hard mode */
 public class DifficultySelectionScreen extends JPanel {
 	/** Selection screen has label: difficulty */
 	private JLabel difficulty;

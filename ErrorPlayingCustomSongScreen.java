@@ -1,10 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
+/** Warns if there is an error when trying to play custom song */
 public class ErrorPlayingCustomSongScreen extends JPanel {
+	/** JLabel containing title of screen */
 	private JLabel title;
+	/** JLabel containing content of screen */
 	private JLabel instructions;
+	/** Screen contains title, error message, one button  */
 	public ErrorPlayingCustomSongScreen() {
 		setLayout(new BorderLayout());
 	
@@ -28,10 +31,10 @@ public class ErrorPlayingCustomSongScreen extends JPanel {
 		panel2.add(label);
 		panel2.add(label2);
 	}
-	//one listener
+	/** listener to go back to title screen  */
 	private class BackListener implements ActionListener {
+		/** calls method to display title screen  */
 		public void actionPerformed(ActionEvent a) {
-			//calls method to display title screen
 			Danceoff.displayTitleScreen();
 		}
 	}

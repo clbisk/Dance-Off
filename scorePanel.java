@@ -8,8 +8,9 @@
 
 /** Description of class scorePanel */
    public class scorePanel extends JPanel {
-   /** scorePanel has one label: score */
+   /** scorePanel has a label for score */
       public static JLabel score;
+		/** socrePanel int for recording current score */
       public static int currentScore;
    /** Flow layout, with one JLabel displaying current score. JLabel is updated whenever more points are scored.*/ 
       public scorePanel() {

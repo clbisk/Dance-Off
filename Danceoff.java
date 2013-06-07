@@ -23,7 +23,9 @@ public class Danceoff {
 	 * represented by 0, and hard difficulty being represented by 1
 	 */
 	private static int difficulty;
+	/** boolean value checking if a song has been created by the user yet */
 	public static boolean songMade = false;
+	/** JFrame where content is displayed */
 	private static JFrame frame = new JFrame("Dance-off!");
 
 	// methods
@@ -69,13 +71,14 @@ public class Danceoff {
 		frame.setVisible(true);
 	}
 	
-	/** displays song creater panel */
+	/** displays song creater instructions panel */
 	public static void newSongInstructions(){
 		MyoInstructionScreen myoInstructions = new MyoInstructionScreen();
 		frame.setContentPane(myoInstructions);
 		frame.setVisible(true);
 	}
 	
+	/** displays song creater panel  */
 	public static void newSong() {
 		MakeYourOwn makeyrown = new MakeYourOwn();
 		frame.setContentPane(makeyrown);
@@ -121,12 +124,13 @@ public class Danceoff {
 		frame.setVisible(true);
 		panel.requestFocusInWindow();
 	}
+	/** displays score at the end of song  */
 	public static void songEnd() {
 		ScoreScreen screen = new ScoreScreen();
 		frame.setContentPane(screen);
 		frame.setVisible(true);
 	}
-	
+	/** displays error screen */
 	public static void youFail() {
 		frame.setContentPane(new ErrorPlayingCustomSongScreen());
 		frame.setVisible(true);

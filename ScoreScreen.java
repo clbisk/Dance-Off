@@ -2,9 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/** Displays score after finishing a level */
 public class ScoreScreen extends JPanel {
+	/** JLabel for title of the screen */
 	private JLabel title;
-	private JLabel instructions;
+	/** Scores screen to be displayed after finishing a song */
 	public ScoreScreen() {
 		setLayout(new BorderLayout());
 	
@@ -78,10 +80,10 @@ public class ScoreScreen extends JPanel {
 			panel2A.add(grade);
 		}
 	}
-	//one listener
-	private class SelectListener implements ActionListener {
+	/** One listener to return to Selection Screen  */
+		private class SelectListener implements ActionListener {
+	/** method for returning to the Selection screen */
 		public void actionPerformed(ActionEvent a) {
-			//calls method to display title screen
 			Danceoff.startGame();
 		}
 	}

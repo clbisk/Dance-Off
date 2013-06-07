@@ -22,13 +22,21 @@ public class DanceQueuePanel extends JPanel {
 	 *	future arrows drawn on screen
 	 */
 	private static	Arrow[] arrows;
+	/** buffer for myImage used in updating screen */
 	private BufferedImage myImage;
+	/** buffer from graphics used for updating screen */
 	private Graphics myBuffer;
+	/** timer for timing to be used alongside arrows */
 	private Timer timer;
+	/** buffer for right arrow */
 	private BufferedImage rightArrowImg;
+	/** buffer for left arrow */
 	private BufferedImage leftArrowImg;
+	/** buffer for up arrow */
 	private BufferedImage upArrowImg;
+	/** buffer for down arrow */
 	private BufferedImage downArrowImg;
+	/** variable to record the length of an array of arrows */
 	private static int len;
 	/** an array of Arrow objects that makes up the custom song created with MakeYourOwn*/
 	public static Arrow[] yourArrows;
@@ -56,7 +64,7 @@ public class DanceQueuePanel extends JPanel {
 	 */
 	private static	int boxYMax	= 170;
 
-	/** constructor */
+	/** panel containing necessary arrays and buffers */
 	public DanceQueuePanel() {
 		//	flow layout
 		setLayout(new FlowLayout());
@@ -117,7 +125,8 @@ public class DanceQueuePanel extends JPanel {
 		}
 		songStart = System.currentTimeMillis();
 	}
-		
+	
+	/** paint component for drawing myImage */	
 	public void	paintComponent(Graphics	g)	{
 		g.drawImage(myImage,	0,	0,	getWidth(),	getHeight(), null);
 	}
@@ -138,6 +147,7 @@ public class DanceQueuePanel extends JPanel {
 		}
 	}
 	
+	/** getter for length of song */
 	private static long getSongTime() {
 		return System.currentTimeMillis()-songStart;
 	}
@@ -180,101 +190,13 @@ public class DanceQueuePanel extends JPanel {
 				repaint();
 				//scheduleNextFrame();
 			}
-			// else if (Danceoff.getSong()!=2) {
-// 				//creates a scanner for reading files
-// 				Scanner infile = null;
-// 				try {
-// 					String filename = "highscores.txt";
-// 					infile = new Scanner(new File(filename));
-// 				} catch (FileNotFoundException d) {
-// 					//creates a scanner for writting to files
-// 					try {
-// 						PrintStream printed = new PrintStream(new FileOutputStream("highscores.txt"));
-// 						System.setOut(printed);
-// 						for (int i = 0; i < 6; i++)
-// 							System.out.println("0");
-// 					} catch (FileNotFoundException f) {
-// 					}
-// 					for (int i = 0; i < 6; i++)
-// 					System.out.println("0");
-// 					String filename = "highscores.txt";
-// 					try {
-// 						infile = new Scanner(new File(filename));
-// 					} catch (FileNotFoundException g) {
-// 					}
-// 				}
-// 				//reads all highscores into array
-// 				int[] numbers = new int[6];
-// 				for (int i = 0; i < 6; i++) {
-// 					numbers[i] = infile.nextInt();
-// 				}
-// 				//creates a scanner for writting to files
-// 				try {
-// 					System.setOut(new PrintStream(new FileOutputStream("highscores.txt")));
-// 				} catch (FileNotFoundException f) {
-// 				}
-// 				//overwrites highscores if score is new highscore
-// 				if (Danceoff.getSong() == -1 && Danceoff.getDifficulty() == 0) {
-// 					if (numbers[0] < scorePanel.getScore()) {
-// 						System.out.println("" + scorePanel.getScore());
-// 						for (int x = 1; x < 6; x++) {
-// 							System.out.println("" + numbers[x]);
-// 						}
-// 					}
-// 				}
-// 				if (Danceoff.getSong() == -1 && Danceoff.getDifficulty() == 1) {
-// 					if (numbers[1] < scorePanel.getScore()) {
-// 						System.out.println("" + numbers[0]);
-// 						System.out.println("" + scorePanel.getScore());
-// 						for (int x = 2; x < 6; x++) {
-// 							System.out.println("" + numbers[x]);
-// 						}
-// 					}
-// 				}
-// 				if (Danceoff.getSong() == 0 && Danceoff.getDifficulty() == 0) {
-// 					if (numbers[2] < scorePanel.getScore()) {
-// 						System.out.println("" + numbers[0]);
-// 						System.out.println("" + numbers[1]);
-// 						System.out.println("" + scorePanel.getScore());
-// 						for (int x = 3; x < 6; x++) {
-// 							System.out.println("" + numbers[x]);
-// 						}
-// 					}
-// 				}
-// 				if (Danceoff.getSong() == 0 && Danceoff.getDifficulty() == 1) {
-// 					if (numbers[3] < scorePanel.getScore()) {
-// 						for (int q = 0; q < 3; q++) {
-// 							System.out.println("" + numbers[q]);
-// 						}
-// 						System.out.println("" + scorePanel.getScore());
-// 						for (int x = 4; x < 6; x++) {
-// 							System.out.println("" + numbers[x]);
-// 						}
-// 					}
-// 				}
-// 				if (Danceoff.getSong() == 1 && Danceoff.getDifficulty() == 0) {
-// 					if (numbers[4] < scorePanel.getScore()) {
-// 						for (int q = 0; q < 4; q++) {
-// 							System.out.println("" + numbers[q]);
-// 						}
-// 						System.out.println("" + scorePanel.getScore());
-// 						for (int x = 5; x < 6; x++) {
-// 							System.out.println("" + numbers[x]);
-// 						}
-// 					}
-// 				}
-// 				if (Danceoff.getSong() == 1 && Danceoff.getDifficulty() == 1) {
-// 					if (numbers[5] < scorePanel.getScore()) {
-// 						for (int q = 0; q < 5; q++) {
-// 							System.out.println("" + numbers[q]);
-// 						}
-// 						System.out.println("" + scorePanel.getScore());
-// 					}
+
 			else {
 				timer.stop();
 				Danceoff.songEnd();
 			}
 		}
+		/** controls drawing instances of the various arrows at various points based off timing*/
 		public void	drawArrow(Graphics myBuffer, Arrow	arrow) {
 			int x;
 			long time = System.currentTimeMillis()-songStart;

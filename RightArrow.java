@@ -1,5 +1,6 @@
+/** RightArrow specification for Arrow */
 public class RightArrow extends Arrow {
-	/**constructor*/
+	/**RightArrow takes one arg for starting time*/
 	public RightArrow(int start) {
 		startTime = start;
 	}

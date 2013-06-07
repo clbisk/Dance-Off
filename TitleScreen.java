@@ -8,7 +8,7 @@ public class TitleScreen extends JPanel {
 	/**JLabel to display title of game ("Dance-Off!")*/
 	private JLabel title;
 	
-	/**constructor*/
+	/**Screen contains img in center, two buttons up top and three on bottom*/
 	public TitleScreen() {
 		setLayout(new BorderLayout());
 		//border layout
@@ -28,9 +28,6 @@ public class TitleScreen extends JPanel {
 		JButton button1 = new JButton("Instructions");
       button1.addActionListener(new InstructionsListener());
 		panel3.add(button1, BorderLayout.NORTH);
-		// JButton button2 = new JButton("High Scores");
-// 		button2.addActionListener(new ShowHighScoresListener());
-// 		panel2.add(button2, BorderLayout.NORTH);
 		JButton button4 = new JButton("Quit");
 		button4.addActionListener(new QuitListener());
 		panel.add(button4, BorderLayout.SOUTH);
@@ -57,13 +54,7 @@ public class TitleScreen extends JPanel {
 			Danceoff.displayInstructions();
 		}
 	}
-// 	/**listens for high scores button clicked*/
-// 	private class ShowHighScoresListener implements ActionListener {
-// 		/**calls method to display high scores*/
-// 		public void actionPerformed(ActionEvent b) {
-// 			Danceoff.displayHighScores();
-// 		}
-// 	}
+// 	/**listens for credits button clicked*/
 	private class ShowCreditsListener implements ActionListener {
 	/**calls method to display high scores*/
 		public void actionPerformed(ActionEvent g) {
